@@ -1,0 +1,42 @@
+mixin form-head()
+	form.js-form-validate( method="post" action="action.php" data-parsley-validate="") 
+		input(type='hidden', class="order", name='Вид формы', value=`Заявка  с сайта` ) 
+		block
+mixin input(t , pl)
+	+e.input-wrap.form-group
+		+e.INPUT.input.form-control(type= t placeholder= pl)&attributes(attributes)
+	// +e.input-wrap
+mixin text( pl)
+	+e.input-wrap.form-group
+		+e.TEXTAREA.input.form-control(   placeholder= pl)&attributes(attributes)
+	// +e.input-wrap
+mixin select()
+	+e.input-wrap.form-group
+		+e.SELECT.input.form-control()&attributes(attributes)
+			block
+	// +e.input-wrap
+
+mixin ta(p , pl)
+	+e.input-wrap.form-group
+		label
+			+e.SPAN.title= p
+			+e.TEXTAREA.input.form-control( placeholder= pl)&attributes(attributes)
+	// +e.input-wrap
+
+mixin form-wrap()
+	+b.form-wrap&attributes(attributes)
+		form
+			block
+mixin inputt( t,  pl, id)
+	+e.input-wrap--order.form-group 
+		+e.INPUT.input--order.form-control( type= t id= id)&attributes(attributes)
+		label.d-block(for= id)= pl
+		
+	// +e.input-wrap
+	
+mixin inputtt( pl, id)
+	+e.input-wrap--order.form-group 
+		+e.TEXTAREA.input--order.form-control(  id= id)&attributes(attributes)
+		label.d-block(for= id)= pl
+		
+	// +e.input-wrap

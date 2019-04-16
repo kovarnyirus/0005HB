@@ -1,0 +1,77 @@
+extends layout/main.pug
+
+
+include ../blocks/catalog-nav/_catalog-nav.pug
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+include ../blocks/s-stock/_s-stock.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-brands/_s-brands.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/prod-head/_prod-head.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-order/_s-order.pug
+include ../blocks/aside/_aside.pug
+include ../blocks/s-po/_s-po.pug
+
+block title
+	title Подписка на рассылку
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-nav()
+		+top-line()
+		+catalog-nav()
+		
+	//- +header-block()
+	.container
+		.border-top.border-light
+		+breadcrumb("Личный кабинет", "Главная")
+		.h4.text-gray Личный кабинет
+		// start s-po
+		+b.s-po
+			.row
+				.col-lg-3
+					+aside
+				.col
+					+e.section
+						.h4.text-gray.pb-3 Подписка на рассылку
+						+form-wrap()
+							+e.input-wrap--addr.form-group
+								+e.INPUT.input--addr.form-control( type="text" placeholder="Введите Ваш e-mail"  )
+								+e.BUTTON.btn-addr.btn.btn-sm.btn-outline-primary(type="button") Подписаться
+						
+						+form-wrap()
+							+e.input-wrap--addr.form-group
+								+e.INPUT.input--addr.--active.form-control( type="text" placeholder="Введите Ваш e-mail" value="Вы подписаны на рассылку"  )
+								+e.BUTTON.btn-addr.btn.btn-sm.btn-outline-primary(type="button") Отписаться
+						.h4.text-gray.pb-3 Почему стоит подписаться на нашу рассылку
+						+e.subscribe-row.row
+							.col-4
+								+e.subscribe-item
+									+e.img-wrap
+										img.res-i(src="img/favorite-1.svg", alt="alt")
+									.small Узнавайте первыми об акциях и скидках на сайте
+							// .col-4
+							
+							.col-4
+								+e.subscribe-item
+									+e.img-wrap
+										img.res-i(src="img/favorite-2.svg", alt="alt")
+									.small Секретные предложения для подписчиков
+							// .col-4
+							.col-4
+								+e.subscribe-item
+									+e.img-wrap
+										img.res-i(src="img/favorite-3.svg", alt="alt")
+									.small Новинки и бестселлеры, интересные именно вам
+							// .col-4
+
+		// end s-po
+			
+	+footer()
+	+modal()
+	

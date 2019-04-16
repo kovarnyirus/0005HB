@@ -1,0 +1,72 @@
+extends layout/main.pug
+
+
+include ../blocks/catalog-nav/_catalog-nav.pug
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+include ../blocks/s-stock/_s-stock.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-brands/_s-brands.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/prod-head/_prod-head.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-order/_s-order.pug
+include ../blocks/aside/_aside.pug
+include ../blocks/s-po/_s-po.pug
+
+block title
+	title Регистрация
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-nav-login() 
+		+top-line()
+		+catalog-nav()
+		
+	//- +header-block()
+	.container
+		.border-top.border-light
+		+breadcrumb("Личный кабинет", "Главная")
+		.h4.text-gray Регистрация
+		// start s-po
+		+b.s-po
+			.row
+				.col-xl-9.col-lg-10
+					+e.section.pl-0.pt-2
+						.h4.text-gray.pb-3 
+						+form-wrap()
+							.row
+								.col-md-4.pb-2
+									+inputt("email","E-mail*","email")(required)
+								// .col-md-4.col-sm-6
+								
+								.col-md-4.col-sm-6.pb-2
+									+inputt("text","Пароль*","text")(required)
+								// .col-md-4.col-sm-6
+								
+								.col-md-4.col-sm-6.pb-2
+									+inputt("text","Повторите пароль*","text")
+								// .col-md-4.col-sm-6 
+								.col-md-4.col-sm-6.pb-2
+									.row
+										.col-auto
+											+e.capcha
+												img.res-i(src="img/captcha.jpg", alt="")
+										.col
+											+inputt("text","Код с картинки","text")
+								.col-md-4.col-sm-6.pb-2
+									+e.BUTTON.btn-lg.btn.btn-lg.btn-block.btn-primary(type="submit") Зарегистрироваться
+								.col-md-4.col-sm-6.pt-3
+									a(href="#") Уже есть аккаунт? Войдите в него!
+								.col-xl-9
+									.small Нажимая кнопку “Зарегистрироваться”, вы подтверждаете свое согласие с условиями предоставления услуг 
+										a(href="#") пользовательское соглашение
+
+		// end s-po
+			
+	+footer()
+	+modal()
+	

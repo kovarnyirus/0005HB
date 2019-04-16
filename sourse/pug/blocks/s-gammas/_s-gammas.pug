@@ -1,0 +1,20 @@
+mixin s-gammas()
+	// start s-gammas
+	+b.s-gammas
+		.h2 Гаммы
+		.row
+			mixin item(i,t)
+				+e.col.col-md-4.col-sm-6
+					+e.item
+						+e.img-wrap.img-bg(style=`background-image: url(img/brand-img-${i}.jpg);`)
+							img(src=`img/brand-img-${i}.jpg`, alt="")
+						+e.caption
+							.h6.strong.text-info= t
+							.small.mb-3 Благодаря инновациям, корнями глубоко уходящими в научный подход, Schwarzkopf Professional 
+							a.tdu.small(href="#") 25 товаров
+				// +e.col.col-md-4.col-6
+			- for (var x = 0; x < 2; x++)
+				+item("1","Для непослушных волос")
+				+item("2","Еще гамма")
+				+item("3","Гамма ")
+	// end s-gammas

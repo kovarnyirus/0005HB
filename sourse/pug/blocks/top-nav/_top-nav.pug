@@ -1,0 +1,206 @@
+include ../mixin-wrap/mixin-wrap.pug
+
+
+																		 
+mixin mob-mnu()
+	
+	+b.trop.main-mnu.hidden-mnu.hidden-lg.landingMenu2.d-lg-none
+		.wrapp-hidden
+			.container
+				+b.search-block
+					form
+						+e.INPUT.input.form-control(type="text" placeholder="Поиск по сайту")
+						+e.btn(type="button")
+							+icon("search")
+				+mnu()
+	//  мобильное меню
+mixin top-nav() 
+	// start top-nav 
+	+b.top-nav--fixed.--js
+		.container
+			.row.align-items-center.justify-content-between
+				.col-auto
+					.row.align-items-center
+						.col-auto.d-lg-none
+							.toggle-mnu.toggle-mnu-1.d-lg-none
+								span
+						+e.col.col-auto
+							+e.A.logo--fixed(href="#")
+								.row.align-items-center
+									.col-auto
+										img(src="img/svg/logo.svg" width="92" height="44" alt="")
+									.col.strong.d-lg-none Твой счастливый выбор
+				
+				.col.d-none.d-lg-block
+					+mnu()
+				.col-auto.d-none.d-md-block
+					+e.time--fixed
+						+e.time-row.row
+							.col-auto
+								+icon("clock")
+							.col Время работы 
+								br
+								| с 10:00 до 18:00
+				.col-auto
+					.row.align-items-center
+						.col-auto
+							+e.A.po--fixed.d-block.popup-with-move-anim(href="#modal-po")
+								+icon("user")
+						.col-auto
+							+e.search-toggle--js
+								+icon("search")
+						.col-auto
+							+b.basket-top--fixed
+								+icon("basket")
+								+e.count--fixed 99
+		+b.search-block--fixed.--js
+			.container
+				form
+					+e.INPUT.input.form-control(type="text" placeholder="Поиск по сайту")
+					+e.btn(type="button")
+						+icon("search")
+	// end top-nav 
+	
+	// start top-nav
+	+b.top-nav
+		.container
+			.row
+				+e.col.col-auto.d-none.d-lg-block
+					+e.A.logo(href="#")
+						img(src="img/svg/logo.svg" width="140" height="80" alt="")
+						.strong Твой счастливый выбор
+				.col
+					+e.top-row.row.align-items-center.d-none.d-lg-flex
+						.col.d-none.d-lg-block
+							+mnu()
+						.col-auto
+							+e.A.po.d-block.popup-with-move-anim(href="#modal-po")
+								.row
+									.col-auto
+										+icon("user")
+									.col Вход
+						.col-auto
+							+e.time
+								+e.time-row.row
+									.col-auto
+										+icon("clock")
+									.col Время работы 
+										br
+										| с 10:00 до 18:00
+						.col-auto
+							+b.basket-top.btn.btn-primary
+								+icon("basket")
+								+e.count 3
+								+e.sum 122 665 р
+					.row.justify-content-between
+						.col.d-none.d-md-block
+							+b.search-block--top-nav
+								form
+									+e.INPUT.input.form-control(type="text" placeholder="Поиск по сайту")
+									+e.btn(type="button")
+										+icon("search")
+						.col-auto
+							+b.tel-block
+								div: +e.link.h5(href="tel:+7(800)775-81-50") +7 (800) 
+									span.text-primary 775-81-50
+								div: +e.link.h5(href="tel:+7(495)785-83-44") +7 (495) 
+									span.text-primary 785-83-44
+						.col-auto
+							+e.A.btn.btn.btn-outline-primary.popup-with-move-anim(href="#modal-call")  Заказать звонок
+	// end top-nav 
+mixin top-nav-login() 
+	// start top-nav 
+	+b.top-nav--fixed.--js
+		.container
+			.row.align-items-center.justify-content-between
+				.col-auto
+					.row.align-items-center
+						.col-auto.d-lg-none
+							.toggle-mnu.toggle-mnu-1.d-lg-none
+								span
+						+e.col.col-auto
+							+e.A.logo--fixed(href="#")
+								.row.align-items-center
+									.col-auto
+										img(src="img/svg/logo.svg" width="92" height="44" alt="")
+									.col.strong.d-lg-none Твой счастливый выбор
+				
+				.col.d-none.d-lg-block
+					+mnu()
+				.col-auto.d-none.d-md-block
+					+e.time--fixed
+						+e.time-row.row
+							.col-auto
+								+icon("clock")
+							.col Время работы 
+								br
+								| с 10:00 до 18:00
+				.col-auto
+					.row.align-items-center
+						.col-auto
+							+e.A.po--fixed.d-block.popup-with-move-anim(href="#modal-po")
+								+icon("user")
+						.col-auto
+							+e.search-toggle--js
+								+icon("search")
+						.col-auto
+							+b.basket-top--fixed
+								+icon("basket")
+								+e.count--fixed 99
+		+b.search-block--fixed.--js
+			.container
+				form
+					+e.INPUT.input.form-control(type="text" placeholder="Поиск по сайту")
+					+e.btn(type="button")
+						+icon("search")
+	// end top-nav 
+	
+	// start top-nav
+	+b.top-nav
+		.container
+			.row
+				+e.col.col-auto.d-none.d-lg-block
+					+e.A.logo(href="#")
+						img(src="img/svg/logo.svg" width="140" height="80" alt="")
+						.strong Твой счастливый выбор
+				.col
+					+e.top-row.row.align-items-center.d-none.d-lg-flex
+						.col.d-none.d-lg-block
+							+mnu()
+						.col-auto
+							+e.A.po--btn.d-block.btn.btn-info-light2(href="#")
+								.row
+									.col-auto
+										+icon("user")
+									.col Денис Глуховскийasasasasassasasas
+									.col-auto
+										+icon("logout")
+						//- .col-auto
+						//- 	+e.time
+						//- 		+e.time-row.row
+						//- 			.col-auto
+						//- 				+icon("clock")
+						//- 			.col Время работы 
+						//- 				br
+						//- 				| с 10:00 до 18:00
+						.col-auto
+							+b.basket-top.btn.btn-primary
+								+icon("basket")
+								+e.count 3
+								+e.sum 122 665 р
+					.row.justify-content-between
+						.col.d-none.d-md-block
+							+b.search-block--top-nav
+								form
+									+e.INPUT.input.form-control(type="text" placeholder="Поиск по сайту")
+									+e.btn(type="button")
+										+icon("search")
+						.col-auto
+							+b.tel-block
+								div: +e.link.h5(href="tel:+7(800)775-81-50") +7 (800) 
+									span.text-primary 775-81-50
+								div: +e.link.h5(href="tel:+7(495)785-83-44") +7 (495) 
+									span.text-primary 785-83-44
+						.col-auto
+							+e.A.btn.btn.btn-outline-primary.popup-with-move-anim(href="#modal-call")  Заказать звонок
+	// end top-nav 

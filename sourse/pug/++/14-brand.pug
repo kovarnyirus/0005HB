@@ -1,0 +1,70 @@
+extends layout/main.pug
+
+
+include ../blocks/catalog-nav/_catalog-nav.pug
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+include ../blocks/s-stock/_s-stock.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-brands/_s-brands.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/aside/_aside.pug
+include ../blocks/s-gammas/_s-gammas.pug
+
+block title
+	title Бренд
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-nav-login() 
+		+top-line()
+		+catalog-nav()
+		
+	//- +header-block()
+	.container
+		.border-top.border-light
+		+breadcrumb(" Parachute", "Уход за лицом и телом")
+		.catalog-title.h2.d-lg-none Уход за лицом и телом
+		.row
+			.col-lg-3
+				.text-center.mb-3
+					img.res-i(src="img/brand-logo.png", alt="")
+				+b.form-wrap
+					+e.input-wrap.form-group 
+						+e.SELECT.input.form-control
+							option.d-none(selected value="")  Выбрать другой бренд
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+							option(value="") Schwarzkopf Professional
+				+aside-06('Фильтры')
+			.col-lg-9
+				+b.s-content.section
+					.catalog-title.h2.d-none.d-lg-block Уход за лицом и телом
+
+					img.res-i.mb-3(src="img/brand-bg.jpg", alt="")
+					.small Благодаря инновациям, корнями глубоко уходящими в научный подход, Schwarzkopf Professional продолжает ПРЕдвосхищать тренды за последние 120 лет; обладая более 7,600 патентами - каждый из которых является знаковым в сфере ухода за волосами - наша компания сейчас является одним из трёх ведущих мировых профессиональных брендов по уходу за волосами с сообществом парикмахеров, охватывающим весь земной шар!
+					
+
+				// +b.s-content.section
+				+s-gammas
+				+s-catalog-14("Топы продаж")
+	//- +s-catalog("Спецпредложения","Все спецпредложения")
+	//- +s-catalog("Популярные товары","Все популярные товары")
+	//- +s-brands()
+	//- +s-news()
+	//- +s-form()
+ 
+	+footer()
+	+modal()
+	

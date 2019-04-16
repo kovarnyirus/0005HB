@@ -1,0 +1,194 @@
+mixin prod-item(x,t)
+	+b.item-prod.text-center
+		+e.img-wrap(href="#")
+			img.res-img(src=`img/prod-${x}.png`, alt="")
+		+e.caption
+			+e.title.small(href="#")= t
+			+e.price-row.row.justify-content-center.align-items-center
+				block
+				.col-auto
+					.h5.mb-0  1 415 р.
+			+e.A.btn.btn.btn-sm.btn-primary(href="#")
+				+icon("basket")
+				| В корзину
+			// внизу вид кнопки при добавлении товара в корзину
+			// +e.A.btn.btn.btn-sm.active.btn-primary(href="#")
+				+icon("basket")
+				| В корзине
+mixin prod-item-sl(x,t)
+	+b.item-prod.text-center
+		+e.img-wrap(href="#")
+			img.res-img.swiper-lazy(src="#" data-src=`img/prod-${x}.png`, alt="")
+			.swiper-lazy-preloader
+		+e.caption
+			+e.title.small(href="#")= t
+			+e.price-row.row.justify-content-center.align-items-center
+				block
+				.col-auto
+					.h5.mb-0  1 415 р.
+			+e.A.btn.btn.btn-sm.btn-primary(href="#")
+				+icon("basket")
+				| В корзину
+			// внизу вид кнопки при добавлении товара в корзину
+			
+		// 	+e.A.btn.btn.btn-sm.active.btn-primary(href="#")
+				+icon("basket")
+				| В корзине
+
+
+mixin s-catalog(t,a)
+	// start s-catalog
+	+b.s-catalog
+		.container
+			.section-head
+				.row.align-items-baseline
+					.col-auto
+						.h2.mb-0= t
+					.col-auto
+						a.small(href="#")= a
+			.pos-r
+				+e.carusel--js.swiper-container
+					.swiper-wrapper
+						+e.slide.swiper-slide
+							+prod-item-sl("1","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+								.col-auto
+									.strike 1 415 р.
+								.col-auto
+									+e.stock -160р.
+						+e.slide.swiper-slide
+							+prod-item-sl("2","LA ROCHE POSAY Липикар АП+ бальзам 400мл АП+ бальзам  АП+ бальзам 400мл АП+ бальзам   ")
+								.col-auto
+									.strike 1 415 р.
+								.col-auto
+									+e.stock -160р.
+						+e.slide.swiper-slide
+							+prod-item-sl("3","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+						+e.slide.swiper-slide
+							+prod-item-sl("4","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+					
+						
+				+arrow()
+	// end s-catalog
+
+mixin s-catalog-06(t,a)
+	// start s-catalog
+	+b.s-catalog.pt-0
+		+e.head.small
+			.row
+				.col-sm.col-8
+					.row
+						.col-md-auto Сортировать по:
+						.col-auto
+							+e.select
+								+e.option ↑ Цена
+								+e.d-none
+									div: a(href="#") ↑ Цена
+									div: a(href="#") ↓ Цена
+								
+									div: a(href="#") ↑ Отзывы
+									div: a(href="#") ↓ Отзывы
+									div: a(href="#") ↑ Дата
+									div: a(href="#") ↓ Дата
+							 
+						.col-auto
+							a.tdu.text-body(href="#") Скидки
+						.col-auto
+							a.tdu.text-body(href="#") Новинки
+				.col-sm-auto.col-4.text-md-left.text-right
+					.row
+						.col-md-auto Показывать&nbsp;по: 
+						.col-md-auto
+							.quantity 12
+							.quantity.active 24
+							.quantity 36
+		.row
+			- for (var x = 0; x < 2; x++)
+				+e.col.col-md-4.col-6
+					+prod-item("1","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+						.col-auto
+							.strike 1 415 р.
+						.col-auto
+							+e.stock -160р.
+
+				// +e.col.col-md-4.col-6
+				+e.col.col-md-4.col-6
+					+prod-item("2","LA ROCHE POSAY Липикар АП+ бальзам 400мл АП+ бальзам  АП+ бальзам 400мл АП+ бальзам   ")
+						.col-auto
+							.strike 1 415 р.
+						.col-auto
+							+e.stock -160р.
+				// +e.col.col-md-4.col-6
+				+e.col.col-md-4.col-6
+					+prod-item("3","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+				// +e.col.col-md-4.col-6
+				+e.col.col-md-4.col-6
+					+prod-item("4","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+				// +e.col.col-md-4.col-6
+			+e.col.col-md-4.col-6
+				+prod-item("4","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+			// +e.col.col-md-4.col-6
+		+e.foot.small
+			.row
+				.col
+					nav(aria-label='Page navigation example')
+						ul.pagination
+							li.page-item
+								a.page-link(href='#') 
+									span.d-none.d-md-block Предыдущая
+									span.d-md-none(aria-hidden="true") &laquo;
+							li.page-item
+								a.page-link(href='#') 1
+							li.page-item
+								a.page-link(href='#') 2
+							li.page-item.active
+								a.page-link(href='#') 3
+							li.page-item
+								a.page-link(href='#') 
+									span.d-none.d-md-block Следующая
+									span.d-md-none(aria-hidden="true") &raquo;
+
+				.col-auto.text-md-left.text-right.pb-3
+					.row
+						.col-md-auto.d-none.d-md-block Показывать&nbsp;по: 
+						.col-md-auto
+							.quantity 12
+							.quantity.active 24
+							.quantity 36
+	// end s-catalog
+
+mixin s-catalog-14(t,a)
+	// start s-catalog
+	+b.s-catalog
+		.container
+			.section-head
+				.row.align-items-baseline
+					.col-auto
+						.h2.mb-0= t
+					.col-auto
+						a.small(href="#")= a
+			.pos-r
+				+e.carusel--top-js.swiper-container
+					.swiper-wrapper
+						+e.slide.swiper-slide
+							+prod-item-sl("1","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+								.col-auto
+									.strike 1 415 р.
+								.col-auto
+									+e.stock -160р.
+						+e.slide.swiper-slide
+							+prod-item-sl("2","LA ROCHE POSAY Липикар АП+ бальзам 400мл АП+ бальзам  АП+ бальзам 400мл АП+ бальзам   ")
+								.col-auto
+									.strike 1 415 р.
+								.col-auto
+									+e.stock -160р.
+						+e.slide.swiper-slide
+							+prod-item-sl("3","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+						+e.slide.swiper-slide
+							+prod-item-sl("4","LA ROCHE POSAY Липикар АП+ бальзам 400мл")
+					
+						
+				+arrow()
+			+e.A.btn-more.btn.btn-block.btn-outline-primary(href="#") Смотреть все  товары
+				| 
+				span.d-none.d-sm-inline  Schwarzkopf Professional
+	// end s-catalog

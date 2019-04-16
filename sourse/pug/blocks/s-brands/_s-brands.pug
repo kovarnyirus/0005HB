@@ -1,0 +1,27 @@
+mixin s-brands()
+	// start s-brands
+	+b.s-brands
+		.container
+			.section-head
+				.row.align-items-baseline
+					.col-auto
+						.h2.mb-0 Бренды
+					.col-auto
+						a.small(href="#") Все бренды
+			.pos-r
+				+e.carusel--js.swiper-container
+					.swiper-wrapper
+						- for (var y = 1; y < 3; y++)
+							- for (var x = 1; x < 6; x++)
+								+e.slide.swiper-slide.text-center
+									+e.slide-inner
+										a(href="#"): img.res-i.swiper-lazy(src="#" data-src=`img/brend-${x}.jpg`, alt="")
+										.swiper-lazy-preloader
+									+e.slide-inner
+										a(href="#"): img.res-i.swiper-lazy(src="#" data-src=`img/brend-${x + 1}.jpg`, alt="")
+										.swiper-lazy-preloade
+						
+		 
+
+				+arrow()
+	// end s-brands

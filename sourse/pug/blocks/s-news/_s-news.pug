@@ -1,0 +1,29 @@
+mixin s-news()
+	// start s-news
+	+b.s-news.section
+		.container
+			.section-head.border-0
+				.row.align-items-baseline
+					.col-auto
+						.h2.mb-0 Новости
+					.col-auto
+						a.small(href="#") Все новости
+			.row
+				.col-lg-6
+					+e.main
+						+e.A.img-wrap-main.img-bg(href="#" style="background-image: url(img/news-1.jpg);")
+							img(src="img/news-1.jpg", alt="")
+						+e.link.h6.d-block.text-body(href="#") Представляем вашему вниманию профессиональные средства COCOCHOCO
+						.small COCOCHOCO - признанный лидер в производстве профессиональных средств для эффективного восстановления. Вся продукция разработана и произведена на родине многих видов высококачественной косметики, получившей общемировое признание, в Израиле. Благодаря накопленному опыту, во всех продуктах по уходу за волосами использованы передовые технологии
+				.col-lg-6
+					- for (var x = 1; x < 4; x++)
+						+e.A.small(href="#")
+							.row
+								.col-auto
+									+e.DIV.img-wrap-small.img-bg( style="background-image: url(img/news-2.jpg);")
+										img(src="img/news-2.jpg", alt="")
+								.col
+									div.h6.text-body JANSSEN
+									div.small.text-body JANSSEN Cosmetics – признанный лидирующий бренд наконец на нашем сайте!
+									.date 01/06/2018
+	// end s-news

@@ -1,0 +1,43 @@
+extends layout/main.pug
+
+
+include ../blocks/catalog-nav/_catalog-nav.pug
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+include ../blocks/s-stock/_s-stock.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-brands/_s-brands.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/prod-head/_prod-head.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-order/_s-order.pug
+include ../blocks/aside/_aside.pug
+include ../blocks/s-po/_s-po.pug
+include ../blocks/s-rew/_s-rew.pug
+
+block title
+	title Полезная информация
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		// +top-nav()
+		+top-nav-login()
+		+top-line()
+		+catalog-nav()
+		
+	//- +header-block()
+	.container
+		.border-top.border-light
+		+breadcrumb("Полезная информация", "Главная")
+		.h4.text-gray Полезная информация 
+		+b.btn-menu
+			+e.A.btn.btn.btn-sm.btn-outline-primary(href="#") Отзывы
+			+e.A.btn.btn.btn-sm.btn-outline-primary.active(href="#") Часто задаваемые вопросы
+			
+		+s-rew-13-2
+	+footer()
+	+modal()
+	

@@ -1,0 +1,15 @@
+mixin s-stock()
+	// start s-stock
+	+b.s-stock.section
+		.container
+			.row
+				- for (var x = 1; x < 3; x++)
+					.col-md-6
+						+e.DIV.item(href="#")
+							+e.DIV.img-wrap
+								img.res-i(src=`img/dop-${x}.jpg`, alt="")
+							+e.DIV.foot
+								+e.caption Краткое описание дополнительной акции или распродажи, или акцентного банера на товары
+								+icon("arr-right")
+					// .col-lg-6
+	// end s-stock

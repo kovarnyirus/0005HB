@@ -1,0 +1,38 @@
+extends layout/main.pug
+
+
+include ../blocks/catalog-nav/_catalog-nav.pug
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+include ../blocks/s-stock/_s-stock.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-brands/_s-brands.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/prod-head/_prod-head.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-order/_s-order.pug
+
+block title
+	title title
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-nav()
+		+top-line()
+		+catalog-nav()
+		
+	//- +header-block()
+	.container
+		.border-top.border-light
+		.row
+			.col-lg-6
+				+breadcrumb(" Parachute", "Уход за лицом и телом")
+				+s-basket()
+			.col
+				+s-order()
+	+footer()
+	+modal()
+	

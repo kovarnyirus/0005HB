@@ -1,0 +1,29 @@
+mixin s-basket()
+	// start s-basket
+	+b.s-basket
+		.h4.section-title.text-secondary.mb-0 Корзина
+		table.w-100
+			- for (var x = 0; x < 2; x++)
+				tr
+					td
+						+e.img-wrap.text-center(href="#")
+							img.res-i(src="img/prod.png", alt="")
+					td
+						a.text-body(href="#") Parachute Coconut Oil Кокосовое Масло, 
+						+e.val 100 мл
+					td
+						+b.block-add
+							.w-100 Количество
+							+e.btn--minus.btn
+							input.form-control(type="text" value="1")
+							+e.btn--plus.btn
+					td
+						.strong.mb-2 12 415 р.
+						+e.smallest 1 шт. 2350 р
+						+e.delete
+							+icon("close")
+		+e.foot
+			.row.justify-content-end.align-items-center
+				.col-auto 10 товаров на сумму
+				.col-auto: .h5.strong.mb-0 24 415 р.
+	// end s-basket

@@ -1,0 +1,196 @@
+.s-basket {
+	td{
+		vertical-align: top;
+		@include media-breakpoint-up(sm) {
+			padding-top: 25px;
+			padding-bottom: 15px;
+			padding-left: 5px;
+			padding-right: 5px;
+
+			// padding-top: 43px;
+		}
+		@include media-breakpoint-up(xl) {
+			
+			padding-top: 25px;
+			padding-bottom: 25px;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+			$w: (100% / 484);
+		@include media-breakpoint-up(sm) { 
+		position: relative;
+		border-bottom: solid 1px #e5e5e5;
+	}
+		&:nth-child(1){
+			@include media-breakpoint-up(lg) {
+				width: 116 * $w;
+			} 
+			@include media-breakpoint-up(md) {
+				
+				width: 10%;
+			}
+			
+			width: 76 * $w;
+			text-align: center;
+			}
+
+			&:nth-child(2){
+				@include media-breakpoint-up(lg) {
+					
+					width: 240 * $w;
+				}
+				@include media-breakpoint-up(md) {
+					width: 340 * $w;
+				}
+				@include media-breakpoint-up(sm) {
+				width: 290 * $w;
+				}
+			 
+			}
+ 
+
+			&:nth-child(4){
+				@include media-breakpoint-up(sm){
+					
+					width: 230 * $w;
+				}
+				text-align: right;
+				width: 100px;
+			}
+		 
+		
+	}
+	tr{
+		position: relative;
+	}
+	&__smallest{
+		color: #909090; 
+		font-size: 11px;
+	}
+	&__foot{
+		padding-top: 20px;
+		padding-bottom: 30px;
+		padding-right: 15px;
+	}
+	&__img-wrap{
+		max-width: 56px;
+		display: block;
+	}
+	//
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	&__delete{
+		cursor: pointer;
+		position: absolute;
+		.icon{
+			
+			font-size: 12px;
+			color: #000000;
+		}
+		top: 6px;
+		right: 6px;
+	}
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(xs) {
+		
+		table{
+			display: block;
+			padding-left: 8px;
+			padding-right: 8px;
+		 
+			td,
+			tbody{
+				display: block;
+				
+			 
+			}
+			td:first-child{
+				// width: 100%;
+				// width: auto;
+				width: 86px;
+			}
+			td:nth-child(2){
+			 
+				width: calc(100% - 86px );
+			}
+			td:nth-child(3){
+				// order: 13;
+				// width: 100%;
+			}
+			td:nth-child(4){
+				text-align: right;
+				padding-top: 8px;
+			}
+			tr{
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				@include roww(8);
+				flex-wrap: wrap;
+				justify-content: space-between;
+				// align-items: center;
+				padding-top: 10px;
+				// padding-right: 10px;
+			}
+		}
+		tr{
+			border-bottom: solid 1px #e5e5e5;
+			padding-bottom: 20px;
+		}
+		&__img-wrap{
+			display: block;
+			margin-top: 10px;
+			text-align: center;
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+		// .block-add{
+		// 	width: 100%;
+		// 	&__btn{
+		// 		width: (100% /4);
+		// 		cursor: pointer;
+		// 		background-color: $gray;
+		// 		&::before,
+		// 		&::after{
+		// 			background-color: #ffffff;
+		// 		}
+		// 		&--minus{
+		// 			border-radius: .33333rem 0 0 .33333rem;
+		// 		}
+		// 		&--plus{
+					
+		// 			border-radius: 0 .33333rem .33333rem 0 ;
+		// 		}
+		// 	}
+		// 	.form-control{
+		// 		width: (100% /2);
+		// 		border-radius: 0
+
+		// 	}
+		// }
+		&__img-wrap{
+			padding-top: 0;
+			margin-top: 0;
+		}
+	}
+	@include media-breakpoint-down(xs) {} 
+
+}

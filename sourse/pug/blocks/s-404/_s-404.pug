@@ -1,0 +1,28 @@
+mixin s-404()
+	// start s-404
+	+b.s-404.section#s-404
+		.container 
+			.row.justify-content-md-start.justify-content-center
+				+e.col.col-sm-auto.text-center
+					img(src="img/404.svg", alt="")
+				+e.col.col-auto
+					.h6.strong.pb-2 К&nbsp;сожалению такой  
+						br
+						| страницы не&nbsp;существует
+					+e.row.row
+						.col-auto
+							+e.A.btn.btn.btn-sm.btn-outline-primary(href="#")
+								+icon("arrow-right")
+								| Назад
+						
+						.col-auto
+							+e.A.btn.btn.btn-sm.btn-outline-primary(href="#") На главную
+						
+				+e.col.col-md
+					+b.search-block--404
+						.small.mb-3 Или воспользуйтесь поиском
+						form
+							+e.INPUT.input.form-control(type="text" placeholder="Поиск по сайту")
+							+e.btn(type="button")
+								+icon("search")
+	// end s-404

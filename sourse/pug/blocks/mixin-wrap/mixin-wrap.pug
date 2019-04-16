@@ -1,0 +1,169 @@
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="img/svg/sprite.svg#" + name)
+
+
+mixin breadcrumb(act, ...items)
+	nav.breadcrumb
+		each item in items
+			a.breadcrumb-item(href='#')= item 
+		span.breadcrumb-item.active= act
+		
+mixin pugin()
+	nav(aria-label='...')
+		ul.pagination.justify-content-center
+			li.page-item.disabled
+				a.page-link(href='#', tabindex='-1') 
+					i(class="fas fa-chevron-left")
+			li.page-item.disabled
+				a.page-link.d-none.d-md-block(href='#', tabindex='-1') Назад
+
+			li.page-item
+				a.page-link(href='#') 1
+			li.page-item.active
+				a.page-link(href='#')
+					| 2 
+					span.sr-only (current)
+			li.page-item
+				a.page-link.page-link-more(href='#') ...
+			li.page-item
+				a.page-link(href='#') 3
+
+			li.page-item
+				a.page-link.d-none.d-md-block(href='#') Дальше
+			li.page-item
+				a.page-link(href='#') 
+					i(class="fas fa-chevron-right")
+//- h2.yel(class="  wow fadeInUp animated " data-wow-offset="120" data-wow-duration="1.2s")  
+mixin arrow()
+	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+		+icon('left-arr-small')
+	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+		+icon('left-arr-small')
+		
+mixin polite()
+	.politic Отправляя заявку Вы даете
+		|
+		|
+		+e.A.link(href="Soglasie.pdf" target="_blank")  согласие
+		|
+		|
+		| на&#160;обработку персональных данных
+
+
+
+mixin soc()
+	+b.soc
+		mixin item()
+			+e.A.item(href="" target="_blank"): i(class="fab")&attributes(attributes)
+		.row
+			.col-md-auto
+				.small Поделиться:
+			.col-md-auto
+				+item()(class=" fa-facebook-f")
+				+item()(class="fa-instagram")
+				+item()(class="fa-twitter")
+				+item()(class="fa-vk")
+				+item()(class="fa-odnoklassniki")
+mixin brand()
+	// .brand-block
+	+b.brand-block
+		.row
+			mixin gr(t)
+				+e.col.col-md-3.col-sm-4.col-6
+					+e.group
+						+e.title= t
+						+e.list-wrap
+							block
+				// +e.col.col-md-3.col-sm-4.col-6
+			+gr("A")
+				+e.list: +e.A.link(href="#") A-DERMA 
+				+e.list: +e.A.link(href="#") AHAVA 
+				+e.list: +e.A.link(href="#") AMERICAN CREW 
+				+e.list: +e.A.link(href="#") ARAVIA PROFESSIONAL 
+				+e.list: +e.A.link(href="#") AVENE
+			+gr("B")
+				+e.list: +e.A.link(href="#")  BATISTE
+				+e.list: +e.A.link(href="#") Be Hair
+				+e.list: +e.A.link(href="#") BIODERMA
+				+e.list: +e.A.link(href="#") BIORE
+				+e.list: +e.A.link(href="#") Blistex 
+			+gr("C")
+				+e.list: +e.A.link(href="#") CHI
+				+e.list: +e.A.link(href="#") CHRISTINA
+				+e.list: +e.A.link(href="#") COCOCHOCO
+				+e.list: +e.A.link(href="#") COLAB
+				+e.list: +e.A.link(href="#") COLLAGENE 3D
+				+e.list: +e.A.link(href="#") CRESCIN 
+			+gr("D")
+				+e.list: +e.A.link(href="#") DEKOPILL
+				+e.list: +e.A.link(href="#") DOLIVA
+				+e.list: +e.A.link(href="#") DRY-DRY
+				+e.list: +e.A.link(href="#") DUCRAY
+			
+			+gr("E")
+				+e.list: +e.A.link(href="#") A-DERMA 
+				+e.list: +e.A.link(href="#") AHAVA
+				+e.list: +e.A.link(href="#") AMERICAN CREW 
+				+e.list: +e.A.link(href="#") ARAVIA PROFESSIONAL
+				+e.list: +e.A.link(href="#") AVENE
+			
+			+gr("F")
+				+e.list: +e.A.link(href="#")  FATISTE
+				+e.list: +e.A.link(href="#") Fe Hair
+				+e.list: +e.A.link(href="#") FIODERMA
+				+e.list: +e.A.link(href="#") FIORE
+				+e.list: +e.A.link(href="#") Flistex 
+			
+			+gr("G")
+				+e.list: +e.A.link(href="#") GHI
+				+e.list: +e.A.link(href="#") GHRISTINA
+				+e.list: +e.A.link(href="#") GOCOCHOCO
+				+e.list: +e.A.link(href="#") GOLAB
+				+e.list: +e.A.link(href="#") GOLLAGENE 3D
+				+e.list: +e.A.link(href="#") GRESCIN 
+			
+			+gr("H")
+				+e.list: +e.A.link(href="#") HHI
+				+e.list: +e.A.link(href="#") HHRISTINA
+				+e.list: +e.A.link(href="#") HOCOCHOCO
+				+e.list: +e.A.link(href="#") HOLAB
+				+e.list: +e.A.link(href="#") HOLLAGENE 3D 
+			
+			+gr("H")
+				+e.list: +e.A.link(href="#") HHI
+				+e.list: +e.A.link(href="#") HHRISTINA
+				+e.list: +e.A.link(href="#") HOCOCHOCO
+				+e.list: +e.A.link(href="#") HOLAB
+				+e.list: +e.A.link(href="#") HOLLAGENE 3D 
+	// /.brand-block
+			
+mixin mnu()
+	- var nav= {"АКЦИИ":"#","ДОСТАВКА":"#","КОНТАКТЫ":"#"}
+	+e.UL.nav
+		+e.LI.item: +e.A.link(href="#") КАТАЛОГ
+		// Добавил блок и классы
+		+e.LI.item--dropdown.--dropdown-js.dropdown-cat.dropdown
+			+e.A.link(href="#") БРЕНДЫ
+			+e.menu.dropdown-menu
+				+brand()
+		// /Добавил блок и классы
+		each linkPatch, linkName in nav
+			+e.LI.item: +e.A.link(href= linkPatch)= linkName
+		+e.LI.item: +e.A.link(href="#") КЛУБ HB
+mixin ci()
+	+b.LABEL.custom-input
+		+e.INPUT.input(type="checkbox")
+		+e.SPAN.lab
+		| 
+mixin in-rad(n)
+	+b.LABEL.custom-input
+		+e.INPUT.input(type="radio" name= n)&attributes(attributes)
+		+e.SPAN.lab
+		block 
+mixin in-ch(n)
+	+b.LABEL.custom-input&attributes(attributes)
+		+e.INPUT.input(type="checkbox" name= n)
+		+e.SPAN.lab
+		block 

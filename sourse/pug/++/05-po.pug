@@ -1,0 +1,61 @@
+extends layout/main.pug
+
+
+include ../blocks/catalog-nav/_catalog-nav.pug
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+include ../blocks/s-stock/_s-stock.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-brands/_s-brands.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/prod-head/_prod-head.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-order/_s-order.pug
+include ../blocks/aside/_aside.pug
+include ../blocks/s-po/_s-po.pug
+
+block title
+	title Личный кабинет
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-nav()
+		+top-line()
+		+catalog-nav()
+		
+	//- +header-block()
+	.container
+		.border-top.border-light
+		+breadcrumb("Личный кабинет", "Главная")
+		.h4.text-gray Личный кабинет
+		// start s-po
+		+b.s-po
+			.row
+				.col-lg-3
+					+aside
+				.col
+					+e.section
+						.row
+							.col
+								+e.group
+									.h5 Викторова Татьяна Васильева
+									.h5 18 лет
+									.small: a.text-gray(href="mailto:denyaglav@gmail.com") denyaglav@gmail.com
+									.small: +e.A.link-edit(href="#" ) Изменить данные
+								+e.group
+									.small г. Екатеринбург,  ул. Шировкая, д.36
+									.small: +e.A.link-edit(href="#" ) Изменить адрес
+							.col-sm-auto
+								+e.points-block
+									.h5 
+										+e.SPAN.big 350 
+										| баллов
+									a.small(href="#") Узнать о баллах
+		// end s-po
+			
+	+footer()
+	+modal()
+	

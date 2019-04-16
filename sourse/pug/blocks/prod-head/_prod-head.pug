@@ -1,0 +1,166 @@
+mixin prod-head()
+	// start prod-head
+	+b.prod-head
+		.container
+			// добавил
+			.h2.d-md-none.pb-3 Parachute Coconut Oil Кокосовое Масло, 100 мл
+			.row
+				// переделал классы
+				.col-lg-5.col-md-4
+					+e.sliders
+						mixin sliders(...items)
+							+e.small-row.row
+								// переделал классы
+								.col-sm-2.col-3.d-none.d-lg-block
+									+e.slider-small
+										each item in items
+											+e.slide--small
+												+e.img-wrap--small( )
+													img.res-i(src=`img/${item}.png`, alt="")
+								// переделал классы
+								.col-lg-10
+									+e.slider-big.gal
+										each item in items
+											+e.slide--big
+												+e.A.img-wrap(href=`img/${item}.png` )
+													img.res-i(src="#" data-lazy=`img/${item}.png`, alt="")
+
+
+						+sliders("prod","prod","prod","prod","prod","prod","prod","prod","prod")
+				.col
+					+e.head-row.row.align-items-center
+						.col-auto
+							+e.brand(href="#")
+								img(src="img/brand.png", alt="")
+						.col
+							a(href="#", title="title") Ahava cosmetics 
+						.col-auto
+							+b.availability
+								+e.circle(style="background-color: #50a000;")
+								| В наличии
+					// переделал классы
+					.h2.d-none.d-md-block Parachute Coconut Oil Кокосовое Масло, 100 мл
+					+b.values
+						.row.align-items-center
+							.col-md-auto: .small Объем, мл:
+							- for (var x = 0; x < 3; x++)
+								.col-auto
+									label
+										+e.INPUT.input(type="radio" name="value")
+										+e.SPAN.lab 500 мл
+					+e.price-block: +e.price-block-wrap
+						+e.price-row.row
+							.col-auto
+								.small-row.row.align-items-center
+									.col-auto
+										+e.price-old.small.strike 1 415 р.
+									.col-auto
+										+e.stock -160р.
+								+e.price 12 415 р.
+								+e.point 250 баллов
+									+b.popover-toggle--qu( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ?
+							.col-auto
+								+b.block-add
+									.w-100 Количество
+									+e.btn--minus
+									input.form-control(type="text" value="1")
+									+e.btn--plus.btn
+							.col-auto
+								+e.A.btn.btn.btn-primary(href="#")
+									+icon("basket")
+									| В корзину
+								// внизу вид кнопки при добавлении товара в корзину
+								
+								// +e.A.btn.btn.active.btn-primary(href="#")
+										+icon("basket")
+										| В корзине
+							.col-auto
+								+e.A.btn-click.btn.btn-link.btn-block.popup-with-move-anim(href="#modal-one-click") 
+									+icon("cursor")
+									| Купить в один клик
+					// +e.price-block
+					+b.like-block
+						+e.row.row.justify-content-xl-between.align-items-center
+							// переделал классы
+							// добавил 2 обертки
+							.col
+								+e.row.row.align-items-center
+									.col-sm-auto.order-sm-0.order-last
+										+e.BUTTON.btn.btn.btn-sm.btn-outline-secondary(type="button")
+											+icon("heart")
+											| В избранное
+									// переделал классы
+									.col-sm-auto
+										+b.stars
+											+e.row.row
+												.col-md-auto.col-12
+													+e.item--active: +icon("star")
+													+e.item--active: +icon("star")
+													+e.item--active: +icon("star")
+													+e.item--active: +icon("star")
+													+e.item: +icon("star")
+												.col-md-auto.col-12
+													a(href="#") 25 отзывов
+										// +b.stars
+							.col-auto
+								+soc()
+					// +e.like-block
+		.container
+			+b.delivery-block.border.border-secondary
+				.row
+					.col-lg-auto
+						+e.title.strong.text-info
+							.row.small-row.align-items-center
+								.col-auto
+									+icon("shipped")
+								.col  Условия доставки
+					.col
+						+e.row.row.align-items-center.justify-content-lg-between
+							// переделал классы
+							.col-md-auto.col-sm-6
+								.text-gray Ваш населенный пункт:
+								.dropdown
+									.text.dropdown-toggle( role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="7,7") Краснодар
+									+b.form-wrap--dropdown-menu.dropdown-menu.p-3
+										.arrow
+										form
+											+input("text","Начните вводить название")(class="form-control-sm")
+											+e.block.small
+												+e.item Краснодар
+												+e.item Ростов - на - Дону
+												+e.item Москва
+												+e.item Санкт-Петербург
+												+e.item Еще город
+							// переделал классы
+							.col-md-auto.col-sm-6
+								.text-gray Способ доставки: 
+								.dropdown
+									.text.dropdown-toggle( role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="7,7") Курьер
+									+b.form-wrap--dropdown-menu.dropdown-menu.p-3
+										.arrow
+										+e.block.small
+											+e.item Краснодар
+											+e.item Ростов - на - Дону
+											+e.item Москва
+											+e.item Санкт-Петербург
+											+e.item Еще город
+							// переделал классы
+							.col-md-auto.col-sm-6
+								.text-gray Ближайшая дата доставки:
+								.text-primary 19.08.2018
+							
+							// переделал классы
+							.col-md-auto.col-sm-6
+								.text-gray Стоимость доставки:
+								span.text-primary  280 руб. 
+								| бесплатно от 2900 р. 
+								+b.popover-toggle--qu( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ?
+
+			.h4.section-title.text-gray Описание
+			+b.text-block
+				p.small Кокосовое масло Parachute — это натуральный продукт. Масло изготавливается без использования ароматизаторов, отдушек, загустителей, красителей. Масло Parachute также не дезодорируется, не отбеливается и не рафинируется. Кокосовое масло Parachute — гиппоаллергенный продукт, в котором сохранён максимум благотворных природных компонентов. важаемые клиенты! Обращаем ваше внимание на то, что упаковка может иметь несколько видов дизайна. Поставка осуществляется в зависимости от наличия на складе.
+
+				p.strong Способ применения
+
+				p.small Применение: Кокосовое масло можно наносить в чистом виде. На его основе можно делать маски для кожи, для лица и для волос. Также коксовое масло можно использовать совместно с другими увлажняющими и питающими средствами для лучшего усвоения полезных веществ. Как альтернативу крему — для питания и увлажнения кожи. Как средство для загара — делает загар ровным, при этом препятствует обезвоживанию и сухости кожи. Как смягчающее и успокаивающее средство после эпиляции, маникюра, педикюра, бритья. Делает кожу гладкой и ровной. Оказывает противовоспалительное действие. Как маска для волос — питает, увлажняет и восстанавливает волосы. Минимизирует потери белка во время мытья.
+	// end prod-head

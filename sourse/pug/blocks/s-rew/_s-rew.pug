@@ -1,0 +1,177 @@
+mixin s-rew()
+	// start s-rew
+	+b.s-rew
+		.container
+			.h4.section-title.text-secondary Отзывы
+			.row
+				.col-lg-8
+					mixin item()
+						+b.s-rew-item
+							+e.head
+								.row
+									.col-auto
+										+b.stars
+											+e.item--active: +icon("star")
+											+e.item--active: +icon("star")
+											+e.item--active: +icon("star")
+											+e.item--active: +icon("star")
+											+e.item: +icon("star")
+									.col-sm.order-sm-0.order-last
+										.text-secondary Сергеев Валентин 25 августа 2018
+									.col-auto
+										+b.vote-block
+											.row
+												.col-auto
+													+e.btn--like
+														+icon("like")
+														+e.SPAN.count 20
+												.col-auto
+													+e.btn--dislike
+														+icon("dislike")
+														+e.SPAN.count 20
+							+e.body.bg-info-light
+								+e.inner.d-block.article-js
+									p Масло прекрасное! Для волос и тела как в чистом виде, так и во всевозможных масках и обертываниях. Единственное не совсем удобное узкое горлышко бутылки - но это уже придирка=) 
+									block
+					+item()
+						p Если сомневаетесь брать или нет - рискните, не разочаруетесь. Доставили в самые кротчайшие сроки и хорошо упакованный товар без повреждений. Магазину спасибо!
+						
+					+item()
+						p Если сомневаетесь брать или нет - рискните, не разочаруетесь. Доставили в самые кротчайшие сроки и хорошо упакованный товар без повреждений. Магазину спасибо!
+						
+						p Если сомневаетесь брать или нет - рискните, не разочаруетесь. Доставили в самые кротчайшие сроки и хорошо упакованный товар без повреждений. Магазину спасибо! 
+						p Если сомневаетесь брать или нет - рискните, не разочаруетесь. Доставили в самые кротчайшие сроки и хорошо упакованный товар без повреждений. Магазину спасибо! 
+					+e.A.btn.btn.btn-outline-primary(href="#") Читать все отзывы
+						
+				.col
+					+e.form
+						.h4.text-secondary Оставить отзыв
+						+b.stars
+							+e.row.row
+								.col-auto Ваша оценка
+								.col
+									+e.item--active: +icon("star")
+									+e.item--active: +icon("star")
+									+e.item--active: +icon("star")
+									+e.item--active: +icon("star")
+									+e.item: +icon("star")
+						form
+							+e.TEXTAREA.input--text.form-control(placeholder="Ваш отзыв")
+							+e.BUTTON.btn.btn.btn-outline-primary(type="button") Отправить отзыв
+							.row
+								.col-auto
+									+e.BUTTON.btn.btn.btn-outline-primary(type="button") Войти
+								.col-auto
+									+e.BUTTON.btn.btn.btn-outline-primary(type="button") Зарегистрироваться
+	// end s-rew
+
+
+mixin s-rew-13()
+	// start s-rew
+	+b.s-rew 
+		.row
+			.col-lg-8
+				mixin item()
+					+b.s-rew-item
+						+e.head
+							.row
+								.col-auto
+									+b.stars
+										+e.item--active: +icon("star")
+										+e.item--active: +icon("star")
+										+e.item--active: +icon("star")
+										+e.item--active: +icon("star")
+										+e.item: +icon("star")
+								.col-sm.order-sm-0.order-last
+									.text-secondary Сергеев Валентин 25 августа 2018
+								.col-auto
+									+b.vote-block
+										.row
+											.col-auto
+												+e.btn--like
+													+icon("like")
+													+e.SPAN.count 20
+											.col-auto
+												+e.btn--dislike
+													+icon("dislike")
+													+e.SPAN.count 20
+						+e.body.bg-info-light
+							+e.inner.d-block.article-js
+								p Масло прекрасное! Для волос и тела как в чистом виде, так и во всевозможных масках и обертываниях. Единственное не совсем удобное узкое горлышко бутылки - но это уже придирка=) 
+								block
+				+item()
+					p Если сомневаетесь брать или нет - рискните, не разочаруетесь. Доставили в самые кротчайшие сроки и хорошо упакованный товар без повреждений. Магазину спасибо!
+					
+				+item()
+					p Если сомневаетесь брать или нет - рискните, не разочаруетесь. Доставили в самые кротчайшие сроки и хорошо упакованный товар без повреждений. Магазину спасибо!
+					
+					p Если сомневаетесь брать или нет - рискните, не разочаруетесь. Доставили в самые кротчайшие сроки и хорошо упакованный товар без повреждений. Магазину спасибо! 
+					p Если сомневаетесь брать или нет - рискните, не разочаруетесь. Доставили в самые кротчайшие сроки и хорошо упакованный товар без повреждений. Магазину спасибо! 
+				//- +e.A.btn.btn.btn-outline-primary(href="#") Читать все отзывы
+					
+			.col
+				+e.form
+					.h4.text-gray Оставить отзыв
+					+b.stars.mb-3
+						+e.row.row
+							.col-auto Ваша оценка
+							.col
+								+e.item--active: +icon("star")
+								+e.item--active: +icon("star")
+								+e.item--active: +icon("star")
+								+e.item--active: +icon("star")
+								+e.item: +icon("star")
+					form
+						+input("email","Ваш e-mail")
+						+input("text","Ваше имя")
+						+e.TEXTAREA.input--text.form-control(placeholder="Ваш отзыв")
+						+e.BUTTON.btn.btn.btn-outline-primary(type="button") Отправить отзыв
+	// end s-rew
+
+mixin s-rew-13-2()
+	// start s-rew
+	+b.s-rew 
+		.row
+			.col-lg-8
+				mixin item()
+					+b.s-rew-item
+						+e.head
+							.row 
+								.col-sm 
+									.h5 Как быстро я получу свой товар?
+								.col-auto
+									.small.mb-1 18.08.2018 
+						+e.body.bg-info-light
+							+e.inner.d-block.article-js
+								
+								block
+				+item()
+					p Для того чтобы оформить заказ, необходимо заполнить регистрационную форму. После внесения всех необходимых данных, на указанный Вами e-mail придет подтверждение об успешной регистрации с указанием вашего логина (он же код клиента) и пароля. С этого момента для вас доступны все on-line сервисы и заказ товара.
+					
+				+item()
+					p После оформления заказа на сайте информация передается в курьерскую службу в течении суток, после чего курьер связывается с вами и договаривается на конкретное время
+					p После оформления заказа на сайте информация передается в курьерскую службу в течении суток, после чего курьер связывается с вами и договаривается на конкретное время
+					p После оформления заказа на сайте информация передается в курьерскую службу в течении суток, после чего курьер связывается с вами и договаривается на конкретное время
+					p После оформления заказа на сайте информация передается в курьерскую службу в течении суток, после чего курьер связывается с вами и договаривается на конкретное время
+				//- +e.A.btn.btn.btn-outline-primary(href="#") Читать все отзывы
+					
+			.col
+				+e.form
+					.h4.text-gray Задать вопрос
+					+b.stars.mb-3
+						+e.row.row
+							.col-auto Ваша оценка
+							.col
+								+e.item--active: +icon("star")
+								+e.item--active: +icon("star")
+								+e.item--active: +icon("star")
+								+e.item--active: +icon("star")
+								+e.item: +icon("star")
+					form
+						+input("email","Ваш e-mail")
+						+input("text","Ваше имя")
+						+e.TEXTAREA.input--text.form-control(placeholder="Ваш отзыв")
+						+e.BUTTON.btn.btn.btn-outline-primary(type="button") Задать вопрос
+	// end s-rew
+
+

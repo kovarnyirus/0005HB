@@ -1,0 +1,31 @@
+mixin header-block()
+	// start header-block
+
+	+b.header-block
+		+e.arrow-wrap
+			.container
+		+e.slider
+			+e.slide.img-bg(href="#" style="background-color: #F9D908;background-image: url(img/head.jpg);")
+				img(src="img/head.jpg", alt="")
+			// / +e.slide(style="background-color: #F9D908;")
+			
+			+e.slide.img-bg(href="#" style="background-color: #F97;background-image: url(img/head.jpg);")
+				img(src="img/head.jpg", alt="")
+			// / +e.slide(style="background-color: #F97;")
+ 
+	+b.header-block
+		+e.foot: .container
+			.row
+				mixin item(i,p)
+					+e.col.col-md-3.col-6
+						+e.item
+							.row
+								.col-lg-auto.text-center
+									img.res-img(src=`img/head-i-${i}.png`, alt="")
+								.col.text-center.text-lg-left= p
+					// +e.col.col-4
+				+item("1","Более 5000 товаров  известных мировых косметических брендов")
+				+item("2","Вся продукция, которая представлена на сайте - всегда в наличии!")
+				+item("3","Напрямую сотрудничаем  с официальными дистрибьюторами ")
+				+item("4","Самые выгодные цены и разнообразие Акций для наших клиентов")
+	// end header-block

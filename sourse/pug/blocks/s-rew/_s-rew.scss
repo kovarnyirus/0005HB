@@ -1,0 +1,141 @@
+.s-rew {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	.section-title{
+		margin-bottom: 25px;
+	}
+	&__btn{
+		// width: 160px;
+		padding-top: 13px;
+		padding-bottom: 13px;
+		margin-top: 10px;
+		margin-bottom: 18px;
+		min-width: 104px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	&__input--text{
+		margin-top: 20px;
+		height: 209px;
+		margin-bottom: 10px;
+	}
+	//
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+}
+.s-rew-item{
+	&__head{
+		border: 1px solid #e1eff5;
+		.row{
+			align-items: center;
+		}
+		@include media-breakpoint-up(sm) {
+		padding: 20px 35px 15px;
+	}
+	padding: 15px 10px 10px;
+	.row{
+		>*{
+			margin-bottom: 5px;
+		}
+	}
+	}
+	&__body{
+		@include media-breakpoint-up(sm) {
+
+			padding: 35px 35px 45px;
+		}
+		padding: 25px 10px 25px;
+		p{
+			margin-bottom: 1.2rem;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	margin-bottom: 17px;
+	&__inner{
+		padding: 1px;
+	}
+	
+	.btn-sm{
+		margin-top: 10px;
+		// max-width: 121px;
+		// padding-left: 0;
+		// padding-right: 0;
+
+	}
+}
+.vote-block{
+	margin-left: -5px;
+	margin-right: -5px;
+	&__btn{
+		cursor: pointer;
+		margin-left: 5px;
+		margin-right: 5px;
+		.icon{
+			font-size: $h5-font-size *1.1;
+			margin-right: 5px;
+			color: inherit;
+		 
+		}
+		&--like{
+			color: $info;
+			&:hover
+			{
+				.icon{
+					stroke: $info;
+					stroke-width: 1px;
+				}
+			}
+		}
+		&--like.vote-block__btn--active{
+			.icon{
+				stroke: $info;
+				stroke-width: 1px;
+			}
+		}
+		&--dislike{
+			color: $primary;
+			&:hover	{
+				.icon{
+					stroke: $primary;
+					stroke-width: 1px;
+				}
+			}
+		}
+		&--like.vote-block__btn--active{
+			.icon{
+				stroke: $primary;
+					stroke-width: 1px;
+			}
+		}
+	 
+	}
+	&__count{
+		position: relative;
+		top: -4px;
+	}
+	
+}

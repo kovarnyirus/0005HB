@@ -1,0 +1,23 @@
+mixin s-ordered()
+	// start s-ordered
+	+b.s-ordered
+		.container
+			.h2 Ваш заказ сформирован 
+				span.text-info Т4532ОО
+			.content-block
+				.small Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, 
+					a(href="#", title="title") в Личном кабинете 
+					| что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.
+				.row.align-items-center
+					.col-md-auto.mb-3
+						.small Вы выбрали оплату онлайн, чтобы продолжить нажмите “Оплатить заказ”
+					.col-auto.mb-3
+						+e.A.btn-lg.btn-primary.btn-lg.btn.btn-block(href="#") Оплатить заказ
+				
+				.row.align-items-center
+					.col-md-auto.mb-3
+						.small Вы можете оставить отзыв о работе магазина на странице “Яндекс.Маркет”
+					.col-auto.mb-3
+						+e.A.btn-lg.btn-outline-primary.btn-sm.btn.btn-block(href="#") Оставить отзыв
+				
+	// end s-ordered

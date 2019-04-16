@@ -1,0 +1,224 @@
+mixin s-order()
+	// start s-order
+	+b.s-order.bg-info-light
+		+e.head
+			+form-wrap()
+				+e.title.h2 Оформление заказа
+				+e.title--sub.strong Получатель
+				.row
+					.col-sm-6
+						+inputt("email","Ваш e-mail","email")(required)
+					
+					.col-sm-6
+						+inputt("tel","Номер телефона","tel")(required placeholder="+7 (____) ____ - ___ - ___ ")
+				p 
+					a(href="#") Войдите с паролем 
+					| или укажите другую эл.почту, чтобы оформить заказ
+				p 
+					+in-ch("deliv-val")
+						+e.SPAN.text.small Хочу получать персональные предложения и вступить в клуб HB 
+							+b.popover-toggle--qu( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ?
+				+inputt("text","ФИО","name")(required)
+				.form-wrap__input-wrap.form-wrap__input-wrap--addr.form-group
+					input#js_frm_sale_order_ajax_old_city_code_val(type='hidden', value='00607')
+					#sls-95076.bx-sls
+						.dropdown-block.bx-ui-sls-input-block
+							span.dropdown-icon
+							input.dropdown-field(type='text', autocomplete='off', name='ORDER_PROP_20', value='00607', placeholder='Введите название ...', style='display: none;')
+							.bx-ui-sls-container(style='margin: 0px; padding: 0px; border: none; position: relative;')
+								input.bx-ui-sls-route(type='text', disabled='disabled', autocomplete='off', style='padding: 0px; margin: 0px;')
+								input.bx-ui-sls-fake(type='text', autocomplete='off', value='00607', placeholder='Введите название ...', title='Гомель, Беларусь Республика, Россия')
+							.dropdown-fade2white
+							.bx-ui-sls-loader
+							.bx-ui-sls-clear(title='Отменить выбор', style='display: block;')
+							.bx-ui-sls-pane(style='overflow: hidden auto; display: none;')
+								.bx-ui-sls-variants
+						.bx-ui-sls-error-message
+					script.
+						if (!window.BX && top.BX)
+						window.BX = top.BX;
+						new BX.Sale.component.location.selector.search({'scope':'sls-95076','source':'/bitrix/components/bitrix/sale.location.selector.search/get.php','query':{'FILTER':{'EXCLUDE_ID':0,'SITE_ID':''},'BEHAVIOUR':{'SEARCH_BY_PRIMARY':'0','LANGUAGE_ID':'ru'}},'selectedItem':129,'knownItems':{'129':{'CODE':'00607','TYPE_ID':'3','PATH':[10,1],'VALUE':129,'DISPLAY':'Гомель'},'1':{'CODE':'0000028023','TYPE_ID':'1','PATH':[1],'VALUE':1,'DISPLAY':'Россия'},'10':{'CODE':'000000090','TYPE_ID':'2','PATH':[],'VALUE':10,'DISPLAY':'Беларусь Республика'}},'provideLinkBy':'code','messages':{'nothingFound':'К сожалению, ничего не найдено','error':'К сожалению, произошла внутренняя ошибка'},'callback':'locationUpdated','useSpawn':false,'usePopup':false,'initializeByGlobalEvent':'','globalEventScope':'','pathNames':{'1':'Россия','10':'Беларусь Республика','129':'Гомель'},'types':{'1':{'CODE':'COUNTRY'},'4':{'CODE':'COUNTRY_DISTRICT'},'2':{'CODE':'REGION'},'5':{'CODE':'SUBREGION'},'3':{'CODE':'CITY'},'6':{'CODE':'VILLAGE'},'7':{'CODE':'STREET'}}});
+					#js_sale_order_ajax_cc_dbadres_select_error.form-wrap__alert.form-wrap__alert--invalid(style='display: none;') Выберете населенный пункт из списка
+
+					//- +b.addr-result
+					//- 	+e.block
+					//- 		- for (var x = 0; x < 8; x++)
+					//- 			+e.item 
+					//- 				+e.row.row
+					//- 					.col-auto 94005 
+					//- 					.col: span.text-gray п. Натухаевский, Московская область, Сергеевский район
+				.delivary-method
+					.row
+						.delivary-col.col-sm-4
+							+in-rad("deliv-val")
+								+e.SPAN.text
+									span.d-block.text-info Курьером
+									span.text-gray.smallest сегодня, бесплатно
+						
+						.delivary-col.col-sm-4
+							+in-rad("deliv-val")
+								+e.SPAN.text
+									span.d-block.text-info Пункт выдачи
+									span.text-gray.smallest завтра, бесплатно
+						.delivary-col.col-sm-4
+							+in-rad("deliv-val")
+								+e.SPAN.text
+									span.d-block.text-info Почта
+									span.text-gray.smallest ~ 12.04.2018   
+										span.text-primary 650 р
+					.delivary-item-wrap
+						.delivary-item
+							.row
+								.col-sm
+									+inputt("text","Улица, дом","ul")(required)
+								.col-sm-3.col-5
+									+inputt("text","Квартира/офис","of")(required)
+							.accordion
+							.accordion__toggle 
+								span.text-info Дополнительно 
+								span.smallest.text-gray (Подъезд/домофон/этаж/комментарий)
+							.accordion__content
+								.row
+									.col-sm-3.col-4
+										+inputt("text","Подъезд","")
+									
+									.col-sm-3.col-4
+										+inputt("text","Домофон","")
+									
+									.col-sm-3.col-4
+										+inputt("text","Этаж")
+								+inputtt("Комментарий","")
+						// .delivary-item
+						
+						.delivary-item
+							+select()
+								option.d-none(disabled selected) Выберите пункт самовывоза
+								option( ) Выберите пункт самовывоза
+								option( ) Выберите пункт самовывоза
+								option( ) Выберите пункт самовывоза
+							.row
+								.col-sm-6.pb-4
+									.smallest.text-gray Адрес: г. Мурманск, пр-кт Ленина, д 82
+										br
+										| Телефон: 
+										a(href="tel:8800222-80-80") 8 800 222 - 80 -80
+
+								.col-sm-6.pb-4
+									.smallest.text-gray Режим работы: ПН-ВС с 9:00 до 21:00
+										br
+										| Стоимость доставки: 
+										span.text-primary 650 р
+
+						// .delivary-item
+						.delivary-item
+							.row
+								.col-sm-9
+									+inputt("text","Улица, дом","ul")(required)
+								.col-sm-3.col-6
+									+inputt("text","Квартира/офис","of")(required)
+								.col-sm-3.col-6
+									+inputt("text","Индекс","") 
+						// .delivary-item
+		+e.foot
+			+form-wrap()
+				.row.align-items-center
+					+e.head-row.col-xl-6.col-sm-5
+						+e.point.small.tex-gray На Вашем счету:
+							+b.popover-toggle--qu( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ?
+						.strong.small.text-primary 1580 баллов
+					+e.head-row.col-xl-6.col-sm-7
+						+inputt("text","Введите количество используемых баллов","point")(class="border-primary" value="650")
+				.row
+					.col-xl-6.col-sm-5
+						+e.table
+							.row
+								+e.col.col 
+									span Товар:
+								.col-auto.strong 24 415 р.
+							
+							.row
+								+e.col.col 
+									span Доставка:
+								.col-auto.strong 24 415 р.
+							
+							.row
+								+e.col.col 
+									span Баллы:
+								.col-auto.strong.text-primary 24 415 р.
+						+e.total
+							.row
+								+e.col.col 
+									span.h5 Итого:
+								.col-auto
+									span.strong.text-info.h5 24 615 р.
+						+e.foot-small.smallest.text-gray Бонусов к зачислению на счет:  
+							span.text-primary.strong.d-inline-block 1 580 
+							|
+							+b.popover-toggle--qu.smallest( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ?
+					.col-xl-6.col-sm-7
+						+e.A.btn-method.btn.btn-block.popup-with-move-anim(href="#modal-pay-method")
+							.row.align-items-center
+								.col-auto
+									div.text-body Оплата
+								.col
+									.text-info.small Выбрать способ оплаты
+						.row.mb-4
+							.col-auto
+								img(src="img/card_new.svg", alt="")
+							.col
+								.smallest.text-gray Принимаем банковские карты Visa, MasterCard
+						+e.A.btn-lg.btn.btn-lg.btn-block.btn-primary(href="#") Подтвердить заказ
+				+e.foot.smallest Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на 
+					a(href="#") обработку персональных данных 
+						
+	// end s-order
+
+mixin s-order-05()
+	// start s-order
+	+b.s-order--history.bg-info-light
+		+e.foot--history
+			+form-wrap()
+				+e.table
+					.row
+						+e.col.col 
+							span Товар:
+						.col-auto.strong 24 415 р.
+					
+					.row
+						+e.col.col 
+							span Доставка:
+						.col-auto.strong 24 415 р.
+					
+					.row
+						+e.col.col 
+							span Баллы:
+						.col-auto.strong.text-primary 24 415 р.
+				+e.total
+					.row
+						+e.col.col 
+							span.h5 Итого:
+						.col-auto
+							span.strong.text-info.h5 24 615 р.
+				+e.foot-small.smallest.text-gray
+					.row.small-row
+						.col Бонусов к зачислению на счет:  
+						.col-auto
+							span.text-primary.strong.d-inline-block.strong 1 580 
+								|
+						+b.popover-toggle--qu.smallest( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ? 
+				+e.A.btn-method.btn.btn-block.popup-with-move-anim(href="#modal-pay-method")
+					.row
+						.col-auto
+							div.mb-2 Оплата
+						.col
+							.text-info.small.mb-2 Выбрать способ оплаты
+					.row
+						.col-auto
+							img(src="img/card_new.svg", alt="")
+						.col
+							.smallest.text-gray Принимаем банковские карты Visa, MasterCard
+				+e.A.btn-lg.btn.btn-lg.btn-block.btn-primary(href="#") Оплатить
+				+e.A.btn-lg.btn.btn-lg.btn-block.btn-info(href="#") Повторить заказ
+	// end s-order
+
+

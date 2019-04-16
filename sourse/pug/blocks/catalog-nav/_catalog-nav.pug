@@ -1,0 +1,309 @@
+
+mixin drop-menu()
+	+e.menu.dropdown-menu()
+		.row
+			+e.col.col-3
+				.h5.text-info Категории
+				+b.UL.dropdown-cat-other
+					+e.LI.item
+						+e.A.link(href="#") Для глаз
+					+e.LI.item
+						+e.A.link(href="#") Для губ
+					+e.LI.item
+						+e.A.link(href="#") Для лица
+					+e.LI.item
+						+e.A.link(href="#") Для бровей
+					+e.LI.item
+						+e.A.link(href="#") Многофунциональные
+					+e.LI.item
+						+e.A.link(href="#") Тональная основа
+					+e.LI.item
+						+e.A.link(href="#") BB крем
+					+e.LI.item
+						+e.A.link(href="#") CC крем
+					+e.LI.item
+						+e.A.link(href="#") Кушон
+					+e.LI.item
+						+e.A.link(href="#") Праймер
+					+e.LI.item
+						+e.A.link(href="#") Рассыпчатая пудра
+					+e.LI.item
+						+e.A.link.text-info(href="#") Все категории
+			
+			+e.col.col-3
+				.h5.text-info Популярные бренды
+				+b.UL.dropdown-cat-other
+					+e.LI.item
+						+e.A.link(href="#") Для глаз
+					+e.LI.item
+						+e.A.link(href="#") Для губ
+					+e.LI.item
+						+e.A.link(href="#") Для лица
+					+e.LI.item
+						+e.A.link(href="#") Для бровей
+					+e.LI.item
+						+e.A.link(href="#") Многофунциональные
+					+e.LI.item
+						+e.A.link(href="#") Тональная основа
+					+e.LI.item
+						+e.A.link(href="#") BB крем
+					+e.LI.item
+						+e.A.link(href="#") CC крем
+					+e.LI.item
+						+e.A.link(href="#") Кушон
+					+e.LI.item
+						+e.A.link(href="#") Праймер
+					+e.LI.item
+						+e.A.link(href="#") Рассыпчатая пудра
+					+e.LI.item
+						+e.A.link.text-info(href="#") Все бренды
+			
+			+e.col.prod-popular-goods-col.col-3
+				+b.prod-popular-goods.h-100
+					.h5.text-info Популярные товары
+					- for (var x = 0; x < 5; x++)
+						+e.item(href="#")
+							.row
+								.col-auto
+									+e.DIV.img-wrap
+										img.res-i(src="img/prod-1.png", alt="")
+								.col
+									+e.DIV.caption.small LA ROCHE POSAY Липикар АП+ бальзам 400мл
+						// +e.item
+			+e.col.col-3
+				.h5.text-info Интересное
+				+b.interest-block
+					- for (var x = 0; x < 2; x++)
+						+e.item.text-body(href="#")
+							+e.DIV.img-wrap
+								img.res-i(src="img/interest.jpg", alt="")
+								+e.DIV.caption.small Текст для популярного в одну две строки для наглядности
+						// .item
+					
+				
+mixin catalog-nav()
+	// start catalog-nav
+	+b.catalog-nav
+		.container
+			.row.align-items-center.justify-content-between
+				.col-auto
+					+b.dropdown-cat.dropdown
+						+e.toggle--js.dropdown-toggle(role="button" aria-haspopup="true" aria-expanded="false")
+							span 
+							+e.SPAN.title Все категории
+						+e.menu.dropdown-menu()
+							.row
+								.col-auto.d-none.d-lg-block
+									- var nav2= {"Уход за лицом":"#","Уход за волосами":"#","Парфюмерия":"#","Уход за телом":"#","Мама и малыш":"#","Украшения":"#"}
+									+b.UL.dropdown-cat-has-children.custom-scroll-js
+										+e.LI.item--js
+											+e.A.link.--js(href="#") Уход за лицом
+										- for (var x = 0; x < 2; x++)
+											each linkPatch, linkName in nav2
+												+e.LI.item--js
+													+e.A.link(href= linkPatch)= linkName
+									
+								// / .col-auto
+								.col
+									.dropdown-cat-sub-wrap.custom-scroll-js
+										+b.dropdown-cat-sub-accordion: +b.UL.dropdown-cat-sub
+											- for (var z = 0; z < 3; z++)
+												+e.LI.item
+													+e.A.link(href="#") Для глаз
+												+e.LI.item
+													+e.A.link(href="#") Для губ
+												+e.LI.item
+													+e.A.link(href="#") Для лица
+												+e.LI.item
+													+e.A.link(href="#") Для бровей
+												+e.LI.item
+													+e.A.link(href="#") Многофунциональные
+												+e.LI.item
+													+e.A.link(href="#") Тональная основа
+												+e.LI.item
+													+e.A.link(href="#") BB крем
+												+e.LI.item
+													+e.A.link(href="#") CC крем
+												+e.LI.item
+													+e.A.link(href="#") Кушон
+												+e.LI.item
+													+e.A.link(href="#") Праймер
+												+e.LI.item
+													+e.A.link(href="#") Рассыпчатая пудра
+										
+										+b.dropdown-cat-sub-accordion: +b.UL.dropdown-cat-sub
+											- for (var z = 0; z < 3; z++)
+												+e.LI.item
+													+e.A.link(href="#") Для глаз
+												+e.LI.item
+													+e.A.link(href="#") Для губ
+												+e.LI.item
+													+e.A.link(href="#") Для лица
+												+e.LI.item
+													+e.A.link(href="#") Для бровей
+												+e.LI.item
+													+e.A.link(href="#") Для бровей
+									 
+										// +b.dropdown-cat-sub-accordion
+										
+										+b.dropdown-cat-sub-accordion: +b.UL.dropdown-cat-sub
+											- for (var z = 0; z < 3; z++)
+												+e.LI.item
+													+e.A.link(href="#") Для глаз
+												+e.LI.item
+													+e.A.link(href="#") Для губ
+												+e.LI.item
+													+e.A.link(href="#") Для лица
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+									 			
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+
+										// +b.dropdown-cat-sub-accordion
+										
+										+b.dropdown-cat-sub-accordion: +b.UL.dropdown-cat-sub
+											- for (var z = 0; z < 3; z++)
+												+e.LI.item
+													+e.A.link(href="#") Для глаз
+												+e.LI.item
+													+e.A.link(href="#") Для губ
+												+e.LI.item
+													+e.A.link(href="#") Для лица
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												+e.LI.item
+													+e.A.link(href="#") Для глаз
+												+e.LI.item
+													+e.A.link(href="#") Для губ
+												+e.LI.item
+													+e.A.link(href="#") Для лица
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												
+												+e.LI.item
+													+e.A.link(href="#") Для глаз
+												+e.LI.item
+													+e.A.link(href="#") Для губ
+												+e.LI.item
+													+e.A.link(href="#") Для лица
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+												+e.LI.item
+													+e.A.link(href="#") Для бровей 
+
+										// +b.dropdown-cat-sub-accordion
+
+										- for (var x = 0; x < 8; x++)
+											+b.dropdown-cat-sub-accordion: +b.UL.dropdown-cat-sub
+												- for (var y = 0; y < 3; y++)
+													+e.LI.item
+														+e.A.link(href="#") Для глаз
+													+e.LI.item
+														+e.A.link(href="#") Для губ
+													+e.LI.item
+														+e.A.link(href="#") Для лица
+													+e.LI.item
+														+e.A.link(href="#") Для бровей
+													+e.LI.item
+														+e.A.link(href="#") Многофунциональные
+													+e.LI.item
+														+e.A.link(href="#") Тональная основа
+													+e.LI.item
+														+e.A.link(href="#") BB крем
+													+e.LI.item
+														+e.A.link(href="#") CC крем
+													+e.LI.item
+														+e.A.link(href="#") Кушон
+													+e.LI.item
+														+e.A.link(href="#") Праймер
+													+e.LI.item
+														+e.A.link(href="#") Рассыпчатая пудра
+													+e.LI.item
+														+e.A.link(href="#") Компактная пудра
+													+e.LI.item
+														+e.A.link(href="#") Румяна
+													+e.LI.item
+														+e.A.link(href="#") Хайлайтер
+													+e.LI.item
+														+e.A.link(href="#") Бронзатор
+													+e.LI.item
+														+e.A.link(href="#") Консилер
+													+e.LI.item
+														+e.A.link(href="#") Корректор
+													+e.LI.item
+														+e.A.link(href="#") Матирующие салфетки
+													+e.LI.item
+														+e.A.link(href="#") Фиксатор макияжа
+													+e.LI.item
+														+e.A.link(href="#") Контуринг
+											// +b.dropdown-cat-sub-accordion
+									
+										 
+										+b.dropdown-cat-sub-accordion: +b.UL.dropdown-cat-sub
+											- for (var y = 0; y < 3; y++)
+												+e.LI.item
+													+e.A.link(href="#") Для глаз
+												+e.LI.item
+													+e.A.link(href="#") Для губ
+												+e.LI.item
+													+e.A.link(href="#") Для лица
+												+e.LI.item
+													+e.A.link(href="#") Для бровей
+												+e.LI.item
+													+e.A.link(href="#") Многофунциональные
+												+e.LI.item
+													+e.A.link(href="#") Тональная основа
+											 
+												+e.LI.item
+													+e.A.link(href="#") Корректор
+												+e.LI.item
+													+e.A.link(href="#") Матирующие салфетки
+												+e.LI.item
+													+e.A.link(href="#") Фиксатор макияжа
+												+e.LI.item
+													+e.A.link(href="#") Контуринг
+										// +b.dropdown-cat-sub-accordion
+									
+								// /.col
+					// /+b.dropdown-cat.dropdown
+				// /.col-auto
+				.col.d-none.d-lg-block.position-static
+					+e.UL.list
+						+e.LI.item: +b.dropdown-cat--other-js.dropdown
+							+e.toggle--cat-js.dropdown-toggle(role="button" aria-haspopup="true" aria-expanded="false"): a.catalog-nav__link(href="#") Для лица 
+							+drop-menu()
+						+e.LI.item: +b.dropdown-cat--other-js.dropdown
+							+e.toggle--cat-js.dropdown-toggle(role="button" aria-haspopup="true" aria-expanded="false"): a.catalog-nav__link(href="#") Для волос
+							+drop-menu()
+						+e.LI.item: +b.dropdown-cat--other-js.dropdown
+							+e.toggle--cat-js.dropdown-toggle(role="button" aria-haspopup="true" aria-expanded="false"): a.catalog-nav__link(href="#") Для тела
+							+drop-menu()
+						+e.LI.item: +b.dropdown-cat--other-js.dropdown
+							+e.toggle--cat-js.dropdown-toggle(role="button" aria-haspopup="true" aria-expanded="false"): a.catalog-nav__link(href="#") Мама и Малыш
+							+drop-menu()
+						+e.LI.item: +b.dropdown-cat--other-js.dropdown
+							+e.toggle--cat-js.dropdown-toggle(role="button" aria-haspopup="true" aria-expanded="false"): a.catalog-nav__link(href="#") Для мужчин
+							+drop-menu()
+				+e.col.col-auto 
+					+e.link(href="#") 
+						+icon("stock")
+						| СПЕЦПРЕДЛОЖЕНИЯ!
+	// end catalog-nav

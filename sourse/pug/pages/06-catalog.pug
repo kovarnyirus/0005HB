@@ -1,0 +1,48 @@
+extends layout/main.pug
+
+
+include ../blocks/catalog-nav/_catalog-nav.pug
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+include ../blocks/s-stock/_s-stock.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-brands/_s-brands.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/aside/_aside.pug
+
+block title
+	title Листинг
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-nav-login() 
+		+top-line()
+		+catalog-nav()
+		
+	//- +header-block()
+	.container
+		.border-top.border-light
+		+breadcrumb(" Parachute", "Уход за лицом и телом")
+		.catalog-title.h2 Уход за лицом и телом
+		.row
+			.col-lg-3
+				s
+				+aside-06('Подобрать товар')
+			.col-lg-9
+				+s-catalog-06()
+	//- +s-catalog("Спецпредложения","Все спецпредложения")
+	//- +s-catalog("Популярные товары","Все популярные товары")
+	//- +s-brands()
+	//- +s-news()
+	//- +s-form()
+	.s-content--seo
+		.container
+			.h6  СЕО ТЕКСТ КАТЕГОРИИ
+			.small COCOCHOCO - признанный лидер в производстве профессиональных средств для эффективного восстановления. Вся продукция разработана и произведена на родине многих видов высококачественной косметики, получившей общемировое признание, в Израиле. Благодаря накопленному опыту, во всех продуктах по уходу за волосами использованы передовые технологии
+	// .s-content--seo
+	+footer()
+	+modal()
+	

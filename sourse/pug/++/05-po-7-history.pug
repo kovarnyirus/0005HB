@@ -1,0 +1,91 @@
+extends layout/main.pug
+
+
+include ../blocks/catalog-nav/_catalog-nav.pug
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+include ../blocks/s-stock/_s-stock.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-brands/_s-brands.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/prod-head/_prod-head.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-order/_s-order.pug
+include ../blocks/aside/_aside.pug
+include ../blocks/s-po/_s-po.pug
+
+block title
+	title История заказов
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-nav()
+		+top-line()
+		+catalog-nav()
+		
+	//- +header-block()
+	.container
+		.border-top.border-light
+		+breadcrumb("Личный кабинет", "Главная")
+		.h4.text-gray Личный кабинет
+		// start s-po
+		+b.s-po
+			.row
+				.col-lg-3
+					+aside
+				.col
+					+e.section
+						.h4.text-gray.pb-3 История заказов
+						+e.TABLE.table-history
+							mixin tr-block()
+								tr.tr-history
+									td Заказ №659963 от 19 ноября 2019г.
+									td На сумму: 
+										span.h5.text-info.strong.d-inline-block.mb-0 24 615 р.
+									td
+										block
+										+e.toggle
+											+icon('toggle')
+								tr.tr-toggle.tr-toggle--js
+									td(colspan="3")
+										.inner-block
+											.small-row.row
+												.col-lg-8
+													+b.s-basket.bg-white
+														table.w-100
+															- for (var x = 0; x < 2; x++)
+																tr
+																	td
+																		+e.img-wrap.text-center(href="#")
+																			img.res-i(src="img/prod.png", alt="")
+																	td
+																		a.text-body(href="#") Parachute Coconut Oil Кокосовое Масло, 
+																		+e.val 100 мл
+																	td
+																		.pb-2.smallest Количество
+																		.h4 5
+																	td
+																		.strong.mb-2 12 415 р.
+																		+e.smallest 1 шт. 2350 р
+													+e.smaller Доставка Самовывоз Мурманск по адресу:
+													.small.pb-4 г. Мурманск ул. Шмидта д.33
+													.smallest Тут если что пишется номер почтового отправления
+												.col
+													+s-order-05()
+							+tr-block()
+								+e.label-status--success Выполнен 04.08.2019 г.
+							+tr-block()
+								+e.label-status--cansel Отменен 04.08.2019 г.
+							+tr-block()
+								+e.label-status--expect Ожидает оплаты
+							+tr-block()
+								+e.label-status--expect Ожидает оплаты
+					 
+		// end s-po
+			
+	+footer()
+	+modal()
+	

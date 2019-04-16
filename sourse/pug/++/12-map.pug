@@ -1,0 +1,76 @@
+extends layout/main.pug
+
+
+include ../blocks/catalog-nav/_catalog-nav.pug
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+include ../blocks/s-stock/_s-stock.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-brands/_s-brands.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/prod-head/_prod-head.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-order/_s-order.pug
+include ../blocks/aside/_aside.pug
+include ../blocks/s-po/_s-po.pug
+include ../blocks/s-delivery/_s-delivery.pug
+
+block title
+	title Карта сайта
+
+block pagecontent
+	+mob-mnu()
+	+header()
+		// +top-nav()
+		+top-nav-login()
+		+top-line()
+		+catalog-nav()
+		
+	//- +header-block()
+	.container
+		.border-top.border-light
+		+breadcrumb("Карта сайта", "Главная")
+		.h4.text-gray Карта сайта 
+		.section-border-top
+			+b.site-map
+				.row
+					.col-sm-4
+						+e.item: +e.A.link--main(href="#") О нас
+						+e.item: +e.A.link--main(href="#") Контакты
+						+e.item: +e.A.link--main(href="#") Доставка
+						+e.item: +e.A.link--main(href="#") Оплата
+						+e.item: +e.A.link--main(href="#") Возврат
+						+e.item: +e.A.link--main(href="#") Статьи
+						+e.item: +e.A.link--main(href="#") Вакансии
+						+e.item: +e.A.link--main(href="#") Клуб HB
+					.col-sm-4
+						+e.item
+							+e.A.link--main(href="#") Каталог
+							+e.sub-items
+								+e.item--sub: +e.A.link--sub(href="#")  Для лица
+								+e.item--sub: +e.A.link--sub(href="#")  Для волос
+								+e.item--sub: +e.A.link--sub(href="#")  Для тела
+								+e.item--sub: +e.A.link--sub(href="#")  Мама и Малыш
+								+e.item--sub: +e.A.link--sub(href="#")  Натуральная косметика
+								+e.item--sub: +e.A.link--sub(href="#")  Для мужчин
+								+e.item--sub: +e.A.link--sub(href="#")  Аксессуары
+
+					.col-sm-4
+						+e.item
+							+e.A.link--main(href="#") Бренды
+							+e.sub-items
+								+e.item--sub: +e.A.link--sub(href="#") КОРА
+								+e.item--sub: +e.A.link--sub(href="#") EOS
+								+e.item--sub: +e.A.link--sub(href="#") TIGI
+								+e.item--sub: +e.A.link--sub(href="#") ESTHEDERM
+								+e.item--sub: +e.A.link--sub(href="#") CHRISTINA
+								+e.item--sub: +e.A.link--sub(href="#") GUAM
+								+e.item--sub: +e.A.link--sub(href="#") THALGO
+								+e.item--sub: +e.A.link--sub(href="#") DRY-DRY
+								+e.item--sub: +e.A.link--sub(href="#") KERASTASE
+								+e.item--sub: +e.A.link--sub(href="#") LONDA PROFESSIONAL
+	+footer()
+	+modal()
+	
