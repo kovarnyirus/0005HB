@@ -45,15 +45,16 @@
             & td {
                 border-bottom: none;
                 &:nth-child(3) {
-                    @include media-breakpoint-up(sm) {
-                        max-width: 100px;
-                        font-size: 11px;
+                    max-width: 100px;
+                    text-align: center;
+
+                    & .form-control{
+                        border: none;
                         text-align: center;
-                        & .form-control{
-                            border: none;
-                            text-align: center;
-                            font-size: 20px;
-                        }
+                        font-size: 20px;
+                    }
+                    @include media-breakpoint-up(sm) {
+                        font-size: 11px;
                     }
                 }
             }

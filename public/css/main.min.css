@@ -12053,6 +12053,17 @@ body .confirm_coo_data__close {
   border-bottom: none;
 }
 
+.modal-win--product-added .s-basket td:nth-child(3) {
+  max-width: 100px;
+  text-align: center;
+}
+
+.modal-win--product-added .s-basket td:nth-child(3) .form-control {
+  border: none;
+  text-align: center;
+  font-size: 20px;
+}
+
 .modal-win--product-added .s-basket__img-wrap {
   max-width: 46px;
 }
@@ -13403,15 +13414,7 @@ a {
   }
 
   .modal-win--product-added .s-basket td:nth-child(3) {
-    max-width: 100px;
     font-size: 11px;
-    text-align: center;
-  }
-
-  .modal-win--product-added .s-basket td:nth-child(3) .form-control {
-    border: none;
-    text-align: center;
-    font-size: 20px;
   }
 
   .modal-text {
