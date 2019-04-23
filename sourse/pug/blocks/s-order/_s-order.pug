@@ -8,18 +8,19 @@ mixin s-order()
 				.row
 					.col-sm-6
 						+inputt("email","Ваш e-mail","email")(required)
-					
+
 					.col-sm-6
 						+inputt("tel","Номер телефона","tel")(required placeholder="+7 (____) ____ - ___ - ___ ")
-				p 
-					a(href="#") Войдите с паролем 
+				p
+					a(href="#") Войдите с паролем
 					| или укажите другую эл.почту, чтобы оформить заказ
-				p 
+				p
 					+in-ch("deliv-val")
-						+e.SPAN.text.small Хочу получать персональные предложения и вступить в клуб HB 
+						+e.SPAN.text.small Хочу получать персональные предложения и вступить в клуб HB
 							+b.popover-toggle--qu( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ?
 				+inputt("text","ФИО","name")(required)
 				.form-wrap__input-wrap.form-wrap__input-wrap--addr.form-group
+					+e.title--sub.strong Доставка
 					input#js_frm_sale_order_ajax_old_city_code_val(type='hidden', value='00607')
 					#sls-95076.bx-sls
 						.dropdown-block.bx-ui-sls-input-block
@@ -43,9 +44,9 @@ mixin s-order()
 					//- +b.addr-result
 					//- 	+e.block
 					//- 		- for (var x = 0; x < 8; x++)
-					//- 			+e.item 
+					//- 			+e.item
 					//- 				+e.row.row
-					//- 					.col-auto 94005 
+					//- 					.col-auto 94005
 					//- 					.col: span.text-gray п. Натухаевский, Московская область, Сергеевский район
 				.delivary-method
 					.row
@@ -54,7 +55,7 @@ mixin s-order()
 								+e.SPAN.text
 									span.d-block.text-info Курьером
 									span.text-gray.smallest сегодня, бесплатно
-						
+
 						.delivary-col.col-sm-4
 							+in-rad("deliv-val")
 								+e.SPAN.text
@@ -64,7 +65,7 @@ mixin s-order()
 							+in-rad("deliv-val")
 								+e.SPAN.text
 									span.d-block.text-info Почта
-									span.text-gray.smallest ~ 12.04.2018   
+									span.text-gray.smallest ~ 12.04.2018
 										span.text-primary 650 р
 					.delivary-item-wrap
 						.delivary-item
@@ -74,22 +75,22 @@ mixin s-order()
 								.col-sm-3.col-5
 									+inputt("text","Квартира/офис","of")(required)
 							.accordion
-							.accordion__toggle 
-								span.text-info Дополнительно 
+							.accordion__toggle
+								span.text-info Дополнительно
 								span.smallest.text-gray (Подъезд/домофон/этаж/комментарий)
 							.accordion__content
 								.row
 									.col-sm-3.col-4
 										+inputt("text","Подъезд","")
-									
+
 									.col-sm-3.col-4
 										+inputt("text","Домофон","")
-									
+
 									.col-sm-3.col-4
 										+inputt("text","Этаж")
 								+inputtt("Комментарий","")
 						// .delivary-item
-						
+
 						.delivary-item
 							+select()
 								option.d-none(disabled selected) Выберите пункт самовывоза
@@ -100,14 +101,18 @@ mixin s-order()
 								.col-sm-6.pb-4
 									.smallest.text-gray Адрес: г. Мурманск, пр-кт Ленина, д 82
 										br
-										| Телефон: 
+										| Телефон:
 										a(href="tel:8800222-80-80") 8 800 222 - 80 -80
 
-								.col-sm-6.pb-4
+								.col-sm-5.pb-4
 									.smallest.text-gray Режим работы: ПН-ВС с 9:00 до 21:00
 										br
-										| Стоимость доставки: 
+										| Стоимость доставки:
 										span.text-primary 650 р
+								.col-sm-1.pb-4
+									span.popover-toggle.popover-toggle--qu(data-toggle="popover" data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше" data-original-title="" title="") ?
+								.col-sm-12.pb-4
+									a.map-point.popup-with-move-anim(href="#modal-place-selection") Выбрать на карте
 
 						// .delivary-item
 						.delivary-item
@@ -117,7 +122,7 @@ mixin s-order()
 								.col-sm-3.col-6
 									+inputt("text","Квартира/офис","of")(required)
 								.col-sm-3.col-6
-									+inputt("text","Индекс","") 
+									+inputt("text","Индекс","")
 						// .delivary-item
 		+e.foot
 			+form-wrap()
@@ -132,27 +137,27 @@ mixin s-order()
 					.col-xl-6.col-sm-5
 						+e.table
 							.row
-								+e.col.col 
+								+e.col.col
 									span Товар:
 								.col-auto.strong 24 415 р.
-							
+
 							.row
-								+e.col.col 
+								+e.col.col
 									span Доставка:
 								.col-auto.strong 24 415 р.
-							
+
 							.row
-								+e.col.col 
+								+e.col.col
 									span Баллы:
 								.col-auto.strong.text-primary 24 415 р.
 						+e.total
 							.row
-								+e.col.col 
+								+e.col.col
 									span.h5 Итого:
 								.col-auto
 									span.strong.text-info.h5 24 615 р.
-						+e.foot-small.smallest.text-gray Бонусов к зачислению на счет:  
-							span.text-primary.strong.d-inline-block 1 580 
+						+e.foot-small.smallest.text-gray Бонусов к зачислению на счет:
+							span.text-primary.strong.d-inline-block 1 580
 							|
 							+b.popover-toggle--qu.smallest( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ?
 					.col-xl-6.col-sm-7
@@ -168,9 +173,9 @@ mixin s-order()
 							.col
 								.smallest.text-gray Принимаем банковские карты Visa, MasterCard
 						+e.A.btn-lg.btn.btn-lg.btn-block.btn-primary(href="#") Подтвердить заказ
-				+e.foot.smallest Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на 
-					a(href="#") обработку персональных данных 
-						
+				+e.foot.smallest Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на
+					a(href="#") обработку персональных данных
+
 	// end s-order
 
 mixin s-order-05()
@@ -180,32 +185,32 @@ mixin s-order-05()
 			+form-wrap()
 				+e.table
 					.row
-						+e.col.col 
+						+e.col.col
 							span Товар:
 						.col-auto.strong 24 415 р.
-					
+
 					.row
-						+e.col.col 
+						+e.col.col
 							span Доставка:
 						.col-auto.strong 24 415 р.
-					
+
 					.row
-						+e.col.col 
+						+e.col.col
 							span Баллы:
 						.col-auto.strong.text-primary 24 415 р.
 				+e.total
 					.row
-						+e.col.col 
+						+e.col.col
 							span.h5 Итого:
 						.col-auto
 							span.strong.text-info.h5 24 615 р.
 				+e.foot-small.smallest.text-gray
 					.row.small-row
-						.col Бонусов к зачислению на счет:  
+						.col Бонусов к зачислению на счет:
 						.col-auto
-							span.text-primary.strong.d-inline-block.strong 1 580 
+							span.text-primary.strong.d-inline-block.strong 1 580
 								|
-						+b.popover-toggle--qu.smallest( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ? 
+						+b.popover-toggle--qu.smallest( data-toggle="popover"   data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше") ?
 				+e.A.btn-method.btn.btn-block.popup-with-move-anim(href="#modal-pay-method")
 					.row
 						.col-auto

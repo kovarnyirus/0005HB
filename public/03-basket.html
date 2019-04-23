@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="libs/slick/slick.css">
     <link rel="stylesheet" href="libs/ion.rangeSlider-2.2.0/css/ion.rangeSlider.css">
     <link rel="stylesheet" href="libs/ion.rangeSlider-2.2.0/css/ion.rangeSlider.skinHTML5.css">
+    <link rel="stylesheet" type="text/css" href="libs/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="css/page.css">
     <link rel="stylesheet" href="css/main.min.css">
   </head>
@@ -2998,9 +2999,9 @@
                         <!-- +e.input-wrap-->
                       </div>
                     </div>
-                    <p> <a href="#">Войдите с паролем </a>или укажите другую эл.почту, чтобы оформить заказ</p>
-                    <p> 
-                      <label class="custom-input"><input class="custom-input__input" type="checkbox" name="deliv-val"/><span class="custom-input__lab"></span><span class="custom-input__text small">Хочу получать персональные предложения и вступить в клуб HB <span class="popover-toggle popover-toggle--qu" data-toggle="popover" data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше">?</span></span>
+                    <p><a href="#">Войдите с паролем</a>или укажите другую эл.почту, чтобы оформить заказ</p>
+                    <p>
+                      <label class="custom-input"><input class="custom-input__input" type="checkbox" name="deliv-val"/><span class="custom-input__lab"></span><span class="custom-input__text small">Хочу получать персональные предложения и вступить в клуб HB<span class="popover-toggle popover-toggle--qu" data-toggle="popover" data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше">?</span></span>
                       </label>
                     </p>
                     <div class="form-wrap__input-wrap form-wrap__input-wrap--order form-group"> <input class="form-wrap__input form-wrap__input--order form-control" type="text" id="name" required="required"/>
@@ -3008,6 +3009,8 @@
                     </div>
                     <!-- +e.input-wrap-->
                     <div class="form-wrap__input-wrap form-wrap__input-wrap--addr form-group">
+                      <div class="form-wrap__title form-wrap__title--sub strong">Доставка
+                      </div>
                       <input id="js_frm_sale_order_ajax_old_city_code_val" type="hidden" value="00607"/>
                       <div class="bx-sls" id="sls-95076">
                         <div class="dropdown-block bx-ui-sls-input-block"><span class="dropdown-icon"></span>
@@ -3043,7 +3046,7 @@
                           </label>
                         </div>
                         <div class="delivary-col col-sm-4">
-                          <label class="custom-input"><input class="custom-input__input" type="radio" name="deliv-val"/><span class="custom-input__lab"></span><span class="custom-input__text"><span class="d-block text-info">Почта</span><span class="text-gray smallest">~ 12.04.2018   <span class="text-primary">650 р</span></span></span>
+                          <label class="custom-input"><input class="custom-input__input" type="radio" name="deliv-val"/><span class="custom-input__lab"></span><span class="custom-input__text"><span class="d-block text-info">Почта</span><span class="text-gray smallest">~ 12.04.2018<span class="text-primary">650 р</span></span></span>
                           </label>
                         </div>
                       </div>
@@ -3064,7 +3067,7 @@
                             </div>
                           </div>
                           <div class="accordion"></div>
-                          <div class="accordion__toggle"> <span class="text-info">Дополнительно </span><span class="smallest text-gray">(Подъезд/домофон/этаж/комментарий)</span></div>
+                          <div class="accordion__toggle"><span class="text-info">Дополнительно</span><span class="smallest text-gray">(Подъезд/домофон/этаж/комментарий)</span></div>
                           <div class="accordion__content">
                             <div class="row">
                               <div class="col-sm-3 col-4">
@@ -3105,11 +3108,13 @@
                           <!-- +e.input-wrap-->
                           <div class="row">
                             <div class="col-sm-6 pb-4">
-                              <div class="smallest text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон: <a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
+                              <div class="smallest text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон:<a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
                             </div>
-                            <div class="col-sm-6 pb-4">
-                              <div class="smallest text-gray">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки: <span class="text-primary">650 р</span></div>
+                            <div class="col-sm-5 pb-4">
+                              <div class="smallest text-gray">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки:<span class="text-primary">650 р</span></div>
                             </div>
+                            <div class="col-sm-1 pb-4"><span class="popover-toggle popover-toggle--qu" data-toggle="popover" data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше" data-original-title="" title="">?</span></div>
+                            <div class="col-sm-12 pb-4"><a class="map-point popup-with-move-anim" href="#modal-place-selection">Выбрать на карте</a></div>
                           </div>
                         </div>
                         <!-- .delivary-item-->
@@ -3163,29 +3168,29 @@
                       <div class="col-xl-6 col-sm-5">
                         <div class="form-wrap__table">
                           <div class="row">
-                            <div class="form-wrap__col col"> <span>Товар:</span>
+                            <div class="form-wrap__col col"><span>Товар:</span>
                             </div>
                             <div class="col-auto strong">24 415 р.</div>
                           </div>
                           <div class="row">
-                            <div class="form-wrap__col col"> <span>Доставка:</span>
+                            <div class="form-wrap__col col"><span>Доставка:</span>
                             </div>
                             <div class="col-auto strong">24 415 р.</div>
                           </div>
                           <div class="row">
-                            <div class="form-wrap__col col"> <span>Баллы:</span>
+                            <div class="form-wrap__col col"><span>Баллы:</span>
                             </div>
                             <div class="col-auto strong text-primary">24 415 р.</div>
                           </div>
                         </div>
                         <div class="form-wrap__total">
                           <div class="row">
-                            <div class="form-wrap__col col"> <span class="h5">Итого:</span>
+                            <div class="form-wrap__col col"><span class="h5">Итого:</span>
                             </div>
                             <div class="col-auto"><span class="strong text-info h5">24 615 р.</span></div>
                           </div>
                         </div>
-                        <div class="form-wrap__foot-small smallest text-gray">Бонусов к зачислению на счет:  <span class="text-primary strong d-inline-block">1 580 </span>
+                        <div class="form-wrap__foot-small smallest text-gray">Бонусов к зачислению на счет:<span class="text-primary strong d-inline-block">1 580</span>
                           <div class="popover-toggle popover-toggle--qu smallest" data-toggle="popover" data-content="Мы осуществляем доставку бесплатно при заказе товаров на 2900 р. и больше">?
                           </div>
                         </div>
@@ -3207,7 +3212,7 @@
                         </div><a class="form-wrap__btn-lg btn btn-lg btn-block btn-primary" href="#">Подтвердить заказ</a>
                       </div>
                     </div>
-                    <div class="form-wrap__foot smallest">Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на <a href="#">обработку персональных данных </a>
+                    <div class="form-wrap__foot smallest">Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на<a href="#">обработку персональных данных</a>
                     </div>
                   </form>
                 </div>
@@ -3346,7 +3351,7 @@
               </button>
             </div>
           </div>
-          <div class="text-center pt-3"> <a class="small" href="#">Забыли пароль? </a></div>
+          <div class="text-center pt-3"><a class="small" href="#">Забыли пароль?</a></div>
         </form>
       </div>
       <!-- #modal-po-->
@@ -3362,7 +3367,7 @@
           <!-- +e.input-wrap-->
           <button class="form-wrap__btn btn btn-sm btn-block btn-primary" type="submit">Отправить
           </button>
-          <div class="form-wrap__foot smallest">Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на <a href="#">обработку персональных данных </a>
+          <div class="form-wrap__foot smallest">Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на<a href="#">обработку персональных данных</a>
           </div>
         </form>
       </div>
@@ -3385,7 +3390,7 @@
           <!-- +e.input-wrap-->
           <button class="form-wrap__btn btn btn-sm btn-block btn-primary" type="submit">Заказать
           </button>
-          <div class="form-wrap__foot smallest">Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на <a href="#">обработку персональных данных </a>
+          <div class="form-wrap__foot smallest">Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на<a href="#">обработку персональных данных</a>
           </div>
         </form>
       </div>
@@ -3398,6 +3403,107 @@
           </button>
           <button class="form-wrap__btn-lg btn btn-lg btn-block btn-outline-primary" type="submit">Безналичная оплата
           </button>
+        </form>
+      </div>
+      <!-- #modal-call-->
+      <div class="modal-place-selection zoom-anim-dialog mfp-hide" id="modal-place-selection">
+        <div class="row">
+          <div class="col-12">
+            <div class="modal-place-selection__title text-left">Выберите пункт самовывоза на карте
+            </div>
+          </div>
+          <div class="col-8"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A980bad5e1a4b785eeaaf51cbe1b1f73616fe78e80dbadedcac816de8940372c2&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe></div>
+          <div class="col-4">
+            <div class="modal-place-selection__input-wrap form-group"><input class="modal-place-selection__input form-control" type="text" placeholder="Населеный пункт"/>
+            </div>
+            <!-- +e.input-wrap-->
+            <hr class="mb-0"/>
+            <div class="place-selection place-selection__list customscrollbar-js">
+              <div class="place-selection__item">
+                <div class="text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон:<a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
+                <div class="smallest text-gray mt-3">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки:<span class="text-primary">650 р</span></div>
+                <button class="btn btn-outline-primary place-selection__btn">Выбрать</button>
+              </div>
+              <div class="place-selection__item">
+                <div class="text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон:<a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
+                <div class="smallest text-gray mt-3">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки:<span class="text-primary">650 р</span></div>
+                <button class="btn btn-outline-primary place-selection__btn">Выбрать</button>
+              </div>
+              <div class="place-selection__item">
+                <div class="text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон:<a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
+                <div class="smallest text-gray mt-3">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки:<span class="text-primary">650 р</span></div>
+                <button class="btn btn-outline-primary place-selection__btn">Выбрать</button>
+              </div>
+              <div class="place-selection__item">
+                <div class="text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон:<a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
+                <div class="smallest text-gray mt-3">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки:<span class="text-primary">650 р</span></div>
+                <button class="btn btn-outline-primary place-selection__btn">Выбрать</button>
+              </div>
+              <div class="place-selection__item">
+                <div class="text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон:<a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
+                <div class="smallest text-gray mt-3">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки:<span class="text-primary">650 р</span></div>
+                <button class="btn btn-outline-primary place-selection__btn">Выбрать</button>
+              </div>
+              <div class="place-selection__item">
+                <div class="text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон:<a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
+                <div class="smallest text-gray mt-3">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки:<span class="text-primary">650 р</span></div>
+                <button class="btn btn-outline-primary place-selection__btn">Выбрать</button>
+              </div>
+              <div class="place-selection__item">
+                <div class="text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон:<a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
+                <div class="smallest text-gray mt-3">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки:<span class="text-primary">650 р</span></div>
+                <button class="btn btn-outline-primary place-selection__btn">Выбрать</button>
+              </div>
+              <div class="place-selection__item">
+                <div class="text-gray">Адрес: г. Мурманск, пр-кт Ленина, д 82<br/>Телефон:<a href="tel:8800222-80-80">8 800 222 - 80 -80</a></div>
+                <div class="smallest text-gray mt-3">Режим работы: ПН-ВС с 9:00 до 21:00<br/>Стоимость доставки:<span class="text-primary">650 р</span></div>
+                <button class="btn btn-outline-primary place-selection__btn">Выбрать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- #modal-place-selection-->
+      <div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form" id="modal-product-added">
+        <form>
+          <div class="form-wrap__title">Товар добавлен в корзину
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <table>
+                <tr>
+                  <td><a class="form-wrap__img-wrap text-center" href="#"><img class="res-i" src="img/prod.png" alt=""/></a>
+                  </td>
+                  <td><a class="text-body" href="#">Parachute Coconut Oil Кокосовое Масло,</a>
+                    <div class="form-wrap__val">100 мл
+                    </div>
+                  </td>
+                  <td>
+                    <div class="block-add">
+                    </div>
+                    <div class="w-100">Количество
+                      <input class="form-control" type="text" value="1"/>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="strong mb-2">12 415 р.</div>
+                    <div class="form-wrap__smallest">1 шт. 2350 р
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <button class="form-wrap__btn-lg btn btn-lg btn-block btn-outline-primary" type="submit">Продолжить покупки
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="form-wrap__btn-lg btn btn-lg btn-block btn-outline-primary" type="submit">Оформить заказ
+              </button>
+            </div>
+          </div>
         </form>
       </div>
       <!-- #modal-call-->
@@ -3414,6 +3520,7 @@
     <script src="libs/swiper-4.2.0/swiper.min.js"></script>
     <script src="libs/jquery.morelines.min.js"></script>
     <script src="libs/jquery.inputmask.bundle.min.js"></script>
+    <script src="libs/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="libs/ion.rangeSlider-2.2.0/js/ion.rangeSlider.min.js"></script>
     <script src="js/common.js"></script>
   </body>

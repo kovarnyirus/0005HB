@@ -1,37 +1,37 @@
 include ../mixin-wrap/form-wrap.pug
 include ../mixin-wrap/mixin-wrap.pug
-mixin modal() 
- 
+mixin modal()
+
 	//- #modal-win.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modal-win', aria-hidden='true')
-		
-	//- 	div( class="   modal-dialog  modal-dialog-centered  " role='document') 
+
+	//- 	div( class="   modal-dialog  modal-dialog-centered  " role='document')
 	//- 		+form-wrap()(class=" modal-content modal-win ")
 	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			+input("tel","Введите ваш телефон")(name="tel" required) 
-				
+	//- 			+input("tel","Введите ваш телефон")(name="tel" required)
+
 	//- 			+e.BUTTON.btn.btn.btn-accent.btn-block Отправить
 	//- 			+b.wrap-polite
 	//- 				+b.custom-input.polite
 	//- 					+b.LABEL.custom-input.polite
 	//- 						+e.INPUT.input.__input-radio(type="checkbox" checked name="polite" required value="")
 	//- 						+e.SPAN.lab
-	//- 						| Даю 
-	//- 						| 
-	//- 						span.link( data-toggle='modal', data-target='#exampleModal2') согласие 
+	//- 						| Даю
+	//- 						|
+	//- 						span.link( data-toggle='modal', data-target='#exampleModal2') согласие
 
 	//- 						| на хранение и обработку   персональных данных
-	
- 
+
+
 
 	//- #thanks.modal.fade(tabindex='-1', role='dialog', aria-labelledby='thanks', aria-hidden='true')
-	//- 	div( class=" ttext-center  modal-dialog  modal-dialog-centered  " role='document') 
+	//- 	div( class=" ttext-center  modal-dialog  modal-dialog-centered  " role='document')
 	//- 		+form-wrap()(class=" modal-content modal-win ")
 	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
 	//- 			br
 	//- 			.h2 Заявка принята
 	//- 			br
 	//- 			.h3 Скоро с Вами свяжутся
-	//- 			br 
+	//- 			br
 	+form-wrap()(id="modal-po" class="zoom-anim-dialog mfp-hide modal-win modal-form" )
 		+e.title Введите Ваши данные
 		+input("email","Ваш e-mail")(required)
@@ -41,8 +41,8 @@ mixin modal()
 				+e.BUTTON.btn-po.btn.btn-sm.btn-primary(type="submit") Войти
 			.col
 				+e.BUTTON.btn-po.btn.btn-sm.btn-block.btn-outline-primary(type="submit") Зарегистрироваться
-		.text-center.pt-3 
-			a(href="#" ).small Забыли пароль? 
+		.text-center.pt-3
+			a(href="#" ).small Забыли пароль?
 	// #modal-po
 
 	+form-wrap()(id="modal-call" class="zoom-anim-dialog mfp-hide modal-win modal-form" )
@@ -50,19 +50,19 @@ mixin modal()
 		+input("text","Ваше Имя")
 		+input("tel","Ваш телефон")(required)
 		+e.BUTTON.btn.btn.btn-sm.btn-block.btn-primary(type="submit") Отправить
-		+e.foot.smallest Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на 
-					a(href="#") обработку персональных данных 
+		+e.foot.smallest Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на
+					a(href="#") обработку персональных данных
 	// #modal-call
-	
+
 	+form-wrap()(id="modal-one-click" class="zoom-anim-dialog mfp-hide modal-win modal-form" )
 		+e.title Купить в 1 клик
 		+input("email","Ваше email")(required)
 		+input("tel","Ваш телефон")(required)
-		+input("text","Ваше Имя")(required) 
+		+input("text","Ваше Имя")(required)
 		+text( "Комментарий")
 		+e.BUTTON.btn.btn.btn-sm.btn-block.btn-primary(type="submit") Заказать
-		+e.foot.smallest Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на 
-					a(href="#") обработку персональных данных 
+		+e.foot.smallest Нажимая на кнопку, вы подтверждаете свое совершеннолетие, соглашаетесь на
+					a(href="#") обработку персональных данных
 	// #modal-one-click
 
 	+form-wrap()(id="modal-pay-method" class="zoom-anim-dialog mfp-hide modal-win modal-form" )
@@ -70,4 +70,56 @@ mixin modal()
 		+e.BUTTON.btn-lg.btn.btn-lg.btn-block.btn-outline-primary(type="submit") Оплата при получении
 		+e.BUTTON.btn-lg.btn.btn-lg.btn-block.btn-outline-primary(type="submit") Безналичная оплата
 	// #modal-call
-	
+
+
+
+	+b.modal-place-selection.zoom-anim-dialog.mfp-hide#modal-place-selection
+		.row
+			.col-12
+				+e.title.text-left Выберите пункт самовывоза на карте
+			.col-8
+				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A980bad5e1a4b785eeaaf51cbe1b1f73616fe78e80dbadedcac816de8940372c2&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+			.col-4
+				+input("text","Населеный пункт")
+				hr.mb-0
+				+b.place-selection.place-selection__list.customscrollbar-js
+					- for (var x = 0; x < 8; x++)
+						+e.item
+							.text-gray Адрес: г. Мурманск, пр-кт Ленина, д 82
+								br
+								| Телефон:
+								a(href="tel:8800222-80-80") 8 800 222 - 80 -80
+							.smallest.text-gray.mt-3 Режим работы: ПН-ВС с 9:00 до 21:00
+								br
+								| Стоимость доставки:
+								span.text-primary 650 р
+							button.btn.btn-outline-primary.place-selection__btn Выбрать
+
+	// #modal-place-selection
+
+
+	+form-wrap()(id="modal-product-added" class="zoom-anim-dialog mfp-hide modal-win modal-form" )
+		+e.title Товар добавлен в корзину
+		.row
+			.col-12
+				table
+					tr
+						td
+							+e.img-wrap.text-center(href="#")
+								img.res-i(src="img/prod.png", alt="")
+						td
+							a.text-body(href="#") Parachute Coconut Oil Кокосовое Масло,
+							+e.val 100 мл
+						td
+							+b.block-add
+							.w-100 Количество
+								input.form-control(type="text" value="1")
+						td
+							.strong.mb-2 12 415 р.
+							+e.smallest 1 шт. 2350 р
+		.row
+			.col-6
+				+e.BUTTON.btn-lg.btn.btn-lg.btn-block.btn-outline-primary(type="submit") Продолжить покупки
+			.col-6
+				+e.BUTTON.btn-lg.btn.btn-lg.btn-block.btn-outline-primary(type="submit") Оформить заказ
+	// #modal-call

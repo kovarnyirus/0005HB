@@ -1,98 +1,210 @@
 .modal-win {
-	display: block;
-	position: relative;
-	background-color: #ffffff;
-	border: 1px solid $info;
-	max-width: 327px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 20px 15px;
-	.modal-content {
-		// max-width: 485px;
-		// padding-right: 40px 15px;
-	}
-	.mfp-close {
-		// color: $primary;
-		font-size: 20px;
-		font-weight: 100;
-	}   
-	.form-wrap{
-		&__btn{
-			margin-left: auto;
-			margin-right: auto;
-			max-width: 114px;
-		}
-	&__btn-po{
-		min-width: 114px;
-	}
-	}
+    display: block;
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid $info;
+    max-width: 327px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 15px;
+
+    .modal-content {
+        // max-width: 485px;
+        // padding-right: 40px 15px;
+    }
+
+    .mfp-close {
+        // color: $primary;
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    .form-wrap {
+        &__btn {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 114px;
+        }
+
+        &__btn-po {
+            min-width: 114px;
+        }
+    }
 }
 
 a {
-	outline: 0 !important;
+    outline: 0 !important;
 }
 
 .modal-form {
-	position: relative;
+    position: relative;
 }
 
 #foot-dialog {
-	h3 {
-		font-size: em(36);
-	}
+    h3 {
+        font-size: em(36);
+    }
 }
- 
 
-@include media-breakpoint-up(sm) { 
-	.modal-text {
-		max-width: 1000px;
-	}
+
+@include media-breakpoint-up(sm) {
+    .modal-text {
+        max-width: 1000px;
+    }
 }
 
 .polite {
-	.link {
-		color: $primary;
-		cursor: pointer;
-		text-decoration: underline;
-		:hover {
-			display: none;
-		}
-	}
+    .link {
+        color: $primary;
+        cursor: pointer;
+        text-decoration: underline;
+
+        :hover {
+            display: none;
+        }
+    }
+}
+
+.modal-place-selection {
+    max-width: 1060px;
+    position: relative;
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #0085a0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 15px;
+
+    &__title {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+}
+
+.place-selection {
+    max-height: 300px;
+    overflow: hidden;
+    &__item {
+        padding-bottom: 19px;
+        padding-top: 20px;
+        position: relative;
+        box-sizing: border-box;
+        padding-right: 90px;
+        transition: .2s;
+        &:hover{
+            background-color: #F6F1ED;
+            border-bottom: 1px solid #E1E1E1;
+            border-top: 1px solid #E1E1E1;
+            padding-top: 19px;
+            padding-bottom: 18px;
+            padding-left: 19px;
+            padding-right: 71px;
+
+            & .place-selection__btn{
+                display: block;
+            }
+        }
+        &.active{
+            background-color: #F6F1ED;
+            border-bottom: 1px solid #E1E1E1;
+            border-top: 1px solid #E1E1E1;
+            padding-top: 19px;
+            padding-bottom: 18px;
+            padding-left: 19px;
+            & .place-selection__btn{
+                display: block;
+            }
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        right: 15px;
+        bottom: 19px;
+        background-color: #ffffff;
+        display: none;
+    }
+}
+
+.mCSB_inside > .mCSB_container {
+    margin-right: 15px;
+}
+
+.mCSB_scrollTools{
+    right: -6px;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    background-color: #0085A0;
+    border-radius: 0;
+}
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: #00647f;
+}
+
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
+    background-color: #00455f;
 }
 
 
-// 
-@include media-breakpoint-up(xl) {}
+.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: #DCDCDC;
+    width: 4px;
+}
 
-@include media-breakpoint-up(lg) {}
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+    background-color: #00455f;
+}
 
-@include media-breakpoint-up(md) {}
 
-@include media-breakpoint-up(sm) {}
+//
+@include media-breakpoint-up(xl) {
+}
 
-@include media-breakpoint-up(xs) {}
+@include media-breakpoint-up(lg) {
+}
 
-// 
-@include media-breakpoint-between(md, xl) {}
+@include media-breakpoint-up(md) {
+}
 
-// 
-@include media-breakpoint-only(xs) {}
+@include media-breakpoint-up(sm) {
+}
 
-@include media-breakpoint-only(sm) {}
+@include media-breakpoint-up(xs) {
+}
 
-@include media-breakpoint-only(md) {}
+//
+@include media-breakpoint-between(md, xl) {
+}
 
-@include media-breakpoint-only(lg) {}
+//
+@include media-breakpoint-only(xs) {
+}
 
-@include media-breakpoint-only(xl) {}
+@include media-breakpoint-only(sm) {
+}
 
-// 
-@include media-breakpoint-down(xl) {}
+@include media-breakpoint-only(md) {
+}
 
-@include media-breakpoint-down(lg) {}
+@include media-breakpoint-only(lg) {
+}
 
-@include media-breakpoint-down(md) {}
+@include media-breakpoint-only(xl) {
+}
 
-@include media-breakpoint-down(sm) {}
+//
+@include media-breakpoint-down(xl) {
+}
 
-@include media-breakpoint-down(xs) {}
+@include media-breakpoint-down(lg) {
+}
+
+@include media-breakpoint-down(md) {
+}
+
+@include media-breakpoint-down(sm) {
+}
+
+@include media-breakpoint-down(xs) {
+}

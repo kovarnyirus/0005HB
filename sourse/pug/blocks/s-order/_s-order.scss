@@ -35,13 +35,13 @@
 			padding: 25px 25px 0;
 			// padding: 15px 25px 0;
 		}
-		
+
 		padding: 15px 15px 0;
 		background-color: #eaf8ff;
-		
+
 		&--history {
 			background-color: $info-light;
-			
+
 			@include media-breakpoint-up(lg) {
 				padding: 15px 0 0  15px;
 			}
@@ -207,7 +207,7 @@
 }
 
 .delivary-item {
-	display: none;
+	//display: none;
 
 	&.active {
 		display: block;
