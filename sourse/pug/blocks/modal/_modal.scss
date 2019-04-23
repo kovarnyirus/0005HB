@@ -76,8 +76,10 @@ a {
     padding: 20px 15px;
 
     &__title {
-        font-size: 25px;
         margin-bottom: 15px;
+        @include media-breakpoint-up(md) {
+            font-size: 25px;
+        }
     }
 }
 

@@ -12072,7 +12072,6 @@ a {
 }
 
 .modal-place-selection__title {
-  font-size: 25px;
   margin-bottom: 15px;
 }
 
@@ -14353,6 +14352,10 @@ a {
 
   .s-articals__date {
     margin-bottom: 10px;
+  }
+
+  .modal-place-selection__title {
+    font-size: 25px;
   }
 }
 
