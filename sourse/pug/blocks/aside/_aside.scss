@@ -10,7 +10,7 @@
 	// display: flex;
 	// align-items: stretch;
 	&__nav {
-		
+
 
 		background-color: $info-light;
 		height: 100%;
@@ -81,7 +81,7 @@
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
 	background: $primary;
 	border: none !important;
-	
+
 }
 .ui-slider{
 &-handle{
@@ -99,7 +99,7 @@
 	}
 }
 
-} 
+}
 
 .ui-slider-horizontal {
 height: 3px;
@@ -155,6 +155,10 @@ margin-bottom: 30px;
 				@include transform(rotate(90deg));
 			}
 		}
+	}
+
+	&__list{
+		max-height: 260px;
 	}
 
 	&__main-title {
@@ -235,7 +239,7 @@ margin-bottom: 30px;
 				color: #000000;
 			}
 		}
-	} 
+	}
 
 	.aside-filter__range{
 		margin-top: -25px;
