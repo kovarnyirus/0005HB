@@ -120,10 +120,16 @@ a {
             font-size: 25px;
         }
     }
+    &__map{
+        height: 250px;
+        @include media-breakpoint-up(sm) {
+            height: 400px;
+        }
+    }
 }
 
 .place-selection {
-    max-height: 300px;
+    max-height: 340px;
     overflow: hidden;
 
     &__item {

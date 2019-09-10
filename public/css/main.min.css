@@ -12109,8 +12109,12 @@ a {
   margin-bottom: 15px;
 }
 
+.modal-place-selection__map {
+  height: 250px;
+}
+
 .place-selection {
-  max-height: 300px;
+  max-height: 340px;
   overflow: hidden;
 }
 
@@ -13423,6 +13427,10 @@ a {
 
   .modal-text {
     max-width: 1000px;
+  }
+
+  .modal-place-selection__map {
+    height: 400px;
   }
 }
 

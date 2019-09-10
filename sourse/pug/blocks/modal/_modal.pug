@@ -78,7 +78,8 @@ mixin modal()
 			.col-12
 				+e.title.text-left Выберите пункт самовывоза на карте
 			.col-12.col-md-8
-				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A980bad5e1a4b785eeaaf51cbe1b1f73616fe78e80dbadedcac816de8940372c2&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+				+e.map
+					<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A980bad5e1a4b785eeaaf51cbe1b1f73616fe78e80dbadedcac816de8940372c2&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
 			.col-12.col-md-4.mt-3.mt-md-0
 				+input("text","Населеный пункт")
 				hr.mb-0
