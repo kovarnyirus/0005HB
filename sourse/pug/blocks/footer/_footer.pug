@@ -13,15 +13,15 @@ mixin footer()
 							.col Время работы   с 10:00 до 18:00
 				.col.order-lg-0.order-sm-last
 					+e.UL.nav
-						+e.LI.item: +e.A.link.small.ttu(href="#") О НАС 
-						+e.LI.item: +e.A.link.small.ttu(href="#") КАТАЛОГ 
-						+e.LI.item: +e.A.link.small.ttu(href="#") БРЕНДЫ 
-						+e.LI.item: +e.A.link.small.ttu(href="#") КОНТАКТЫ 
-						+e.LI.item: +e.A.link.small.ttu(href="#") ДОСТАВКА 
-						+e.LI.item: +e.A.link.small.ttu(href="#") ОПЛАТА 
-						+e.LI.item: +e.A.link.small.ttu(href="#") ВОЗВРАТ 
-						+e.LI.item: +e.A.link.small.ttu(href="#") СТАТЬИ 
-						+e.LI.item: +e.A.link.small.ttu(href="#") ВАКАНСИИ 
+						+e.LI.item: +e.A.link.small.ttu(href="#") О НАС
+						+e.LI.item: +e.A.link.small.ttu(href="#") КАТАЛОГ
+						+e.LI.item: +e.A.link.small.ttu(href="#") БРЕНДЫ
+						+e.LI.item: +e.A.link.small.ttu(href="#") КОНТАКТЫ
+						+e.LI.item: +e.A.link.small.ttu(href="#") ДОСТАВКА
+						+e.LI.item: +e.A.link.small.ttu(href="#") ОПЛАТА
+						+e.LI.item: +e.A.link.small.ttu(href="#") ВОЗВРАТ
+						+e.LI.item: +e.A.link.small.ttu(href="#") СТАТЬИ
+						+e.LI.item: +e.A.link.small.ttu(href="#") ВАКАНСИИ
 						+e.LI.item: +e.A.link.small.ttu(href="#") КЛУБ HB
 				.col-12.d-sm-none
 					+e.time
@@ -33,18 +33,18 @@ mixin footer()
 					+e.head-row.row.justify-content-between
 						.col-auto
 							+b.tel-block
-								div: +e.link.h5(href="tel:+7(800)775-81-50") +7 (800) 
+								div: +e.link.h5(href="tel:+7(800)775-81-50") +7 (800)
 									span.text-primary 775-81-50
-								div: +e.link.h5(href="tel:+7(495)785-83-44") +7 (495) 
+								div: +e.link.h5(href="tel:+7(495)785-83-44") +7 (495)
 									span.text-primary 785-83-44
 						.col-auto
 							+e.A.btn.btn.btn-outline-primary(href="#") Заказать звонок
 					.row
 						.col
 							ul
-								li: +e.small(href="#").tdu Полезная информация 
-								li: +e.small(href="#").tdu info@happybirdie.ru 
-								li: +e.small(href="#").tdu Написать нам сообщение 
+								li: +e.small(href="#").tdu Полезная информация
+								li: +e.small(href="#").tdu info@happybirdie.ru
+								li: +e.small(href="#").tdu Написать нам сообщение
 								li: +e.small(href="#").tdu Карта сайта
 						.col-sm-auto.col-6
 							+e.delivery
@@ -52,24 +52,31 @@ mixin footer()
 								.small  При заказе от 2900 р. и выше
 		+e.foot
 			.container
-				.row
-					.col-xl-4.col-md-auto.text-md-left.text-center
+				.row.justify-content-center.justify-content-md-start
+					.col-md-auto.text-md-left.text-center
 						+e.small © 2014 — 2018 Happy Birdie
 						+e.small Сайт защищен с использованием технологии SSL.
 					.col
-						a.icon-yandex.tdu.ttu(target='_blank', href='https://market.yandex.ru/shop/323050/reviews') 
-							img.mr-2(src="img/ya-icon.png", alt="")
-							| Отзывы о нас
+						a.icon-yandex.tdu.ttu.footer__soc(target='_blank', href='https://market.yandex.ru/shop/323050/reviews')
+							.d-flex
+								.col-auto.pl-0.pr-0
+									img.mr-2(src="img/ya-icon.png", alt="")
+								.col.pl-0.pr-0.flex-grow-1 Отзывы о нас
+					.col
+						a.tdu.ttu.footer__soc(target='_blank', href='https://www.instagram.com/happybirdieru/')
+							.d-flex
+								.col-auto.pl-0.pr-0
+									img.mr-2(src="img/insta-icon.png", alt="")
+								.col.pl-0.pr-0.flex-grow-1 МЫ В ИНСТАГРАМ
 					.col-lg-auto.text-center.order-lg-0.order-last.mx-1
 						a.small.tdu(href="#") Разработано в MetaSharks
 					.col-auto
 						.row.small-row
 							.col-auto
 								img.res-i(src="img/5959f2b152869d4f928f82b0.png", alt="")
-							
+
 							.col-auto
 								img.res-i(src="img/mastercard_2.png", alt="")
-							
+
 							.col-auto
 								img.res-i(src="img/intelmon-logo-big.png", alt="")
-							

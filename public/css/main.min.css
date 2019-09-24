@@ -12016,6 +12016,12 @@ body .confirm_coo_data__close {
   padding-bottom: 5px;
 }
 
+.footer__soc {
+  font-size: 12px;
+  color: #0085A0;
+  line-height: 23px;
+}
+
 .modal-win {
   display: block;
   position: relative;
@@ -16275,6 +16281,18 @@ a {
 }
 
 @media (max-width: 991.98px) {
+  .footer__soc {
+    font-size: 10px !important;
+  }
+
+  .footer__soc img {
+    max-width: 50px;
+  }
+
+  .footer .icon-yandex img {
+    max-width: 80px;
+  }
+
   .animated {
  /*CSS transitions*/
     -o-transition-property: none !important;
