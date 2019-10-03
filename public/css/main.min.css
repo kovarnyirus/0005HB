@@ -16349,6 +16349,10 @@ a {
     padding-right: 30px;
   }
 
+  .footer__soc {
+    min-width: 143px;
+  }
+
   .modal-win--product-added .s-basket tr {
     border-bottom: none;
   }

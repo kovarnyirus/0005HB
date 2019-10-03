@@ -146,6 +146,9 @@
       }
 
     }
+    @include media-breakpoint-down(sm){
+      min-width: 143px;
+    }
   }
 
   & .icon-yandex{
